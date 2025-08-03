@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Développeur Web Full Stack
 
-## Getting Started
+Un portfolio moderne et responsive développé avec Next.js, TypeScript et Tailwind CSS.
 
-First, run the development server:
+## 🚀 Fonctionnalités
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- ✅ **Design responsive** adapté à tous les appareils
+- ✅ **Mode sombre/clair** automatique basé sur les préférences système
+- ✅ **Animations fluides** avec Framer Motion
+- ✅ **SEO optimisé** avec next-seo
+- ✅ **Performance optimisée** avec Next.js 15
+- ✅ **Projets dynamiques** avec filtres et recherche
+- ✅ **Formulaire de contact** fonctionnel
+- ✅ **PWA ready** avec manifest.json
+
+## 🛠️ Technologies utilisées
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **SEO**: next-seo
+- **Déploiement**: Vercel
+- **Language**: TypeScript/JavaScript
+
+## 📁 Structure du projet
+
+```
+portfolio/
+├── src/app/                  # Pages Next.js (App Router)
+├── components/               # Composants réutilisables
+│   ├── animations/          # Composants d'animation
+│   ├── Layout.jsx           # Layout principal
+│   ├── Navbar.jsx           # Navigation
+│   ├── Footer.jsx           # Pied de page
+│   └── ProjectCard.jsx      # Carte de projet
+├── data/                    # Données des projets
+├── lib/                     # Configuration SEO
+├── public/                  # Assets statiques
+│   ├── images/             # Images du portfolio
+│   └── icons/              # Icônes et favicons
+└── tailwind.config.js      # Configuration Tailwind
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Installation et démarrage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prérequis
+- Node.js 18+ 
+- npm ou yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
+```bash
+# Cloner le repository
+git clone https://github.com/votre-username/portfolio.git
 
-## Learn More
+# Aller dans le dossier
+cd portfolio
 
-To learn more about Next.js, take a look at the following resources:
+# Installer les dépendances
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Lancer en mode développement
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Le site sera accessible sur `http://localhost:3000`
 
-## Deploy on Vercel
+## 📋 Scripts disponibles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev          # Mode développement
+npm run build        # Build de production
+npm run start        # Démarrer la version de production
+npm run lint         # Linter le code
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Personnalisation
+
+### 1. Informations personnelles
+Modifiez les fichiers suivants avec vos informations :
+- `lib/seo.js` - Configuration SEO et métadonnées
+- `data/projects.js` - Vos projets
+- `components/Navbar.jsx` - Liens de navigation
+- `components/Footer.jsx` - Informations de contact
+
+### 2. Couleurs et thème
+Personnalisez les couleurs dans :
+- `src/app/globals.css` - Variables CSS
+- `tailwind.config.js` - Configuration Tailwind
+
+### 3. Images et médias
+Ajoutez vos images dans :
+- `public/images/` - Images des projets et og-image
+- `public/icons/` - Favicons et icônes PWA
+
+## 📱 SEO et métadonnées
+
+Le portfolio est optimisé pour :
+- **Open Graph** pour le partage sur les réseaux sociaux
+- **Twitter Cards** pour Twitter
+- **Schema.org** pour les moteurs de recherche
+- **Favicon** et icônes PWA
+- **Manifest.json** pour l'installation comme app
+
+## 🚀 Déploiement sur Vercel
+
+### Déploiement automatique
+1. Connectez votre repository GitHub à Vercel
+2. Vercel détectera automatiquement Next.js
+3. Le déploiement se fera automatiquement
+
+### Déploiement manuel
+```bash
+# Installer Vercel CLI
+npm i -g vercel
+
+# Déployer
+vercel
+
+# Déployer en production
+vercel --prod
+```
+
+### Variables d'environnement
+Si vous utilisez des APIs externes, ajoutez vos variables dans Vercel :
+- Dashboard Vercel > Projet > Settings > Environment Variables
+
+## 📊 Performance
+
+Le portfolio est optimisé pour :
+- ⚡ **Core Web Vitals** excellents
+- 🏎️ **Lighthouse Score** 90+
+- 📱 **Mobile-first** design
+- 🖼️ **Images optimisées** avec next/image
+- 🗜️ **Bundle size** minimal
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Vous êtes libre de l'utiliser et le modifier selon vos besoins.
+
+## 📞 Contact
+
+- Email: contact@example.com
+- LinkedIn: [Votre LinkedIn](https://linkedin.com/in/votre-profil)
+- GitHub: [Votre GitHub](https://github.com/votre-username)
+
+---
+
+Développé avec ❤️ et Next.js
