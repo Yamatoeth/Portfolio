@@ -27,11 +27,19 @@ export default function Projects() {
   
   const filteredProjects = filter === 'featured' 
     ? featuredProjects 
-    : allProjects;
+    : filter === 'all'
+    ? allProjects
+    : allProjects.filter(project => 
+        project.category?.toLowerCase().includes(filter.toLowerCase()) ||
+        (filter === 'web3' && (project.category?.includes('Blockchain') || project.category?.includes('DeFi') || project.category?.includes('Web3')))
+      );
 
   const categories = [
-    { key: 'all', label: 'Tous les projets' },
-    { key: 'featured', label: 'Projets vedettes' }
+    { key: 'all', label: '🗂️ Tous les projets' },
+    { key: 'featured', label: '⭐ Projets vedettes' },
+    { key: 'web3', label: '🔗 Web3 & Blockchain' },
+    { key: 'web', label: '💻 Applications Web' },
+    { key: 'wordpress', label: '🌐 Sites Vitrine' }
   ];
 
   return (
@@ -44,8 +52,8 @@ export default function Projects() {
                 Mes Projets
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                Découvrez mes réalisations, des applications web modernes aux APIs robustes. 
-                Chaque projet reflète ma passion pour le code de qualité et l&apos;innovation.
+                Découvrez mes réalisations, des sites WordPress aux protocoles DeFi innovants. 
+                Du développement Web classique aux applications décentralisées avec IA intégrée.
               </p>
             </div>
           </FadeIn>
@@ -71,7 +79,7 @@ export default function Projects() {
 
           {/* Projects Grid */}
           {filteredProjects.length > 0 ? (
-            <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Container className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {filteredProjects.map((project: Project) => (
                 <ListItem key={project.id}>
                   <ProjectCard project={project} />

@@ -35,6 +35,32 @@ export const projects = [
     client: "Projet personnel / Web3",
     category: "Blockchain",
     etherscanUrl: "https://sepolia.etherscan.io/address/0x..."
+  },
+  {
+    id: 4,
+    title: "Plateforme DeFi de Lending & Borrowing",
+    description: "Protocole décentralisé inspiré d'Aave permettant le prêt et l'emprunt de crypto-actifs avec intérêts dynamiques. Système de collateral ratio avec liquidation automatique et oracles Chainlink intégrés.",
+    image: "/images/defi-lending.png",
+    technologies: ["Solidity", "Hardhat", "Chainlink", "React", "Ethers.js", "Tailwind CSS"],
+    githubUrl: "https://github.com/yamatoeth/defi-lending-protocol",
+    liveUrl: "https://defi-lending-demo.vercel.app",
+    featured: true,
+    client: "Projet personnel / DeFi",
+    category: "DeFi Protocol",
+    etherscanUrl: "https://sepolia.etherscan.io/address/0x..."
+  },
+  {
+    id: 5,
+    title: "dApp Web3 x IA : Staking, Gouvernance & Swap",
+    description: "Protocole innovant combinant staking de tokens, gouvernance communautaire et IA pour les décisions stratégiques. Inclut un AMM simple, système de vote on-chain et backend IA pour les insights.",
+    image: "/images/web3-ai-dapp.png",
+    technologies: ["Solidity", "Rust", "React", "Wagmi", "Python AI", "IPFS"],
+    githubUrl: "https://github.com/yamatoeth/web3-ai-governance",
+    liveUrl: "https://web3-ai-dapp-demo.vercel.app",
+    featured: true,
+    client: "R&D Web3/AI",
+    category: "Web3 x IA",
+    etherscanUrl: "https://explorer.solana.com/address/..."
   }
 ];
 
