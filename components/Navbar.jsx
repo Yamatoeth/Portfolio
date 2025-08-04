@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavAnimation, AnimatedButton } from './animations';
 import LanguageSelector from './LanguageSelector';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,16 +48,21 @@ const Navbar = () => {
                 >
                   {t('nav.contact')}
                 </Link>
+                <ThemeToggle />
                 <LanguageSelector />
               </div>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-2">
+              <ThemeToggle />
               <LanguageSelector />
               <AnimatedButton
                 onClick={toggleMenu}
-                className="text-foreground hover:text-blue-600 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                className="text-foreground hover:text-blue-600 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-transform duration-200"
+                style={{
+                  transform: isMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)'
+                }}
               >
                 <span className="sr-only">{t('nav.openMenu', 'Ouvrir le menu')}</span>
                 {!isMenuOpen ? (
@@ -74,33 +80,50 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-gray-200 dark:border-gray-700">
-              <Link
-                href="/"
-                className="text-foreground hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="px-4 pt-2 pb-3 space-y-1 bg-background border-t border-gray-200 dark:border-gray-700 shadow-lg">
+            <Link
+              href="/"
+              className="text-foreground hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 active:scale-95"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className="flex items-center">
+                <span className="mr-2">🏠</span>
                 {t('nav.home')}
-              </Link>
-              <Link
-                href="/projects"
-                className="text-foreground hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              </span>
+            </Link>
+            <Link
+              href="/projects"
+              className="text-foreground hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 active:scale-95"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className="flex items-center">
+                <span className="mr-2">💼</span>
                 {t('nav.projects')}
-              </Link>
-              <Link
-                href="/contact"
-                className="text-foreground hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              </span>
+            </Link>
+            <Link
+              href="/contact"
+              className="text-foreground hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 active:scale-95"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <span className="flex items-center">
+                <span className="mr-2">📧</span>
                 {t('nav.contact')}
-              </Link>
+              </span>
+            </Link>
+            
+            {/* Mobile Theme Toggle */}
+            <div className="px-3 py-3 border-t border-gray-200 dark:border-gray-600 mt-2">
+              <div className="flex items-center justify-between">
+                <span className="text-foreground text-sm font-medium">Theme</span>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </NavAnimation>
   );
