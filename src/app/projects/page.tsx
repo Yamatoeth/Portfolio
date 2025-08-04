@@ -15,6 +15,9 @@ interface Project {
   githubUrl: string;
   liveUrl: string;
   featured: boolean;
+  client?: string;
+  category?: string;
+  etherscanUrl?: string;
 }
 
 export default function Projects() {

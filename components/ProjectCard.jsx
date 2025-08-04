@@ -11,7 +11,10 @@ const ProjectCard = ({ project }) => {
     technologies,
     githubUrl,
     liveUrl,
-    featured = false
+    featured = false,
+    client,
+    category,
+    etherscanUrl
   } = project;
 
   return (
@@ -58,6 +61,22 @@ const ProjectCard = ({ project }) => {
         <h3 className="text-xl font-semibold text-foreground mb-2">
           {title}
         </h3>
+
+        {/* Client et Catégorie */}
+        {(client || category) && (
+          <div className="flex flex-wrap gap-2 mb-3">
+            {client && (
+              <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">
+                👤 {client}
+              </span>
+            )}
+            {category && (
+              <span className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">
+                📁 {category}
+              </span>
+            )}
+          </div>
+        )}
 
         {/* Description */}
         <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
@@ -110,13 +129,18 @@ const ProjectCard = ({ project }) => {
             </a>
           )}
 
-          {id && (
-            <Link
-              href={`/projects/${id}`}
-              className="flex items-center gap-2 px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-sm"
+          {etherscanUrl && (
+            <a
+              href={etherscanUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors text-sm"
             >
-              Détails
-            </Link>
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              Etherscan
+            </a>
           )}
         </div>
       </div>
