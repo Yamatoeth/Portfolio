@@ -4,10 +4,12 @@ import Layout from '../../components/Layout';
 import ProjectCard from '../../components/ProjectCard';
 import { FadeIn, SlideInLeft, SlideInRight, Container, ListItem, AnimatedButton } from '../../components/animations';
 import { getFeaturedProjects } from '../../data/projects';
+import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
+  const { t } = useTranslation();
 
   return (
     <Layout>
@@ -20,15 +22,14 @@ export default function Home() {
                 <div>
                   <FadeIn delay={0.2}>
                     <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-                      Développeur
-                      <span className="text-blue-600"> Full Stack</span>
+                      {t('home.title')}
+                      <span className="text-blue-600"> {t('home.titleHighlight')}</span>
                     </h1>
                   </FadeIn>
                   
                   <FadeIn delay={0.4}>
                     <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                      Passionné par la création d&apos;expériences web modernes et performantes. 
-                      Je transforme vos idées en applications web innovantes avec les dernières technologies.
+                      {t('home.subtitle')}
                     </p>
                   </FadeIn>
 
@@ -36,12 +37,12 @@ export default function Home() {
                     <div className="flex flex-wrap gap-4">
                       <Link href="/projects">
                         <AnimatedButton className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                          Voir mes projets
+                          {t('home.viewProjects')}
                         </AnimatedButton>
                       </Link>
                       <Link href="/contact">
                         <AnimatedButton className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors font-medium">
-                          Me contacter
+                          {t('home.contactMe')}
                         </AnimatedButton>
                       </Link>
                     </div>
@@ -54,7 +55,7 @@ export default function Home() {
                   <div className="w-full h-96 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
                     <div className="text-white text-center">
                       <div className="text-6xl mb-4">👨‍💻</div>
-                      <p className="text-xl font-semibold">Code & Create</p>
+                      <p className="text-xl font-semibold">{t('home.codeCreate')}</p>
                     </div>
                   </div>
                 </div>

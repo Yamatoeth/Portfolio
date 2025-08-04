@@ -4,6 +4,7 @@ import Layout from '../../../components/Layout';
 import ProjectCard from '../../../components/ProjectCard';
 import { FadeIn, Container, ListItem, AnimatedButton } from '../../../components/animations';
 import { projects, getFeaturedProjects } from '../../../data/projects';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
 interface Project {
@@ -22,6 +23,7 @@ interface Project {
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
+  const { t } = useTranslation();
   const allProjects = projects;
   const featuredProjects = getFeaturedProjects();
   
@@ -35,11 +37,11 @@ export default function Projects() {
       );
 
   const categories = [
-    { key: 'all', label: '🗂️ Tous les projets' },
-    { key: 'featured', label: '⭐ Projets vedettes' },
-    { key: 'web3', label: '🔗 Web3 & Blockchain' },
-    { key: 'web', label: '💻 Applications Web' },
-    { key: 'wordpress', label: '🌐 Sites Vitrine' }
+    { key: 'all', label: t('projects.filters.all') },
+    { key: 'featured', label: t('projects.filters.featured') },
+    { key: 'web3', label: t('projects.filters.web3') },
+    { key: 'web', label: t('projects.filters.web') },
+    { key: 'wordpress', label: t('projects.filters.wordpress') }
   ];
 
   return (
@@ -49,11 +51,10 @@ export default function Projects() {
           <FadeIn>
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Mes Projets
+                {t('projects.title')}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                Découvrez mes réalisations, des sites WordPress aux protocoles DeFi innovants. 
-                Du développement Web classique aux applications décentralisées avec IA intégrée.
+                {t('projects.subtitle')}
               </p>
             </div>
           </FadeIn>

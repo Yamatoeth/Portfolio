@@ -2,8 +2,10 @@
 
 import Layout from '../../../components/Layout';
 import { FadeIn, SlideInLeft, Container, AnimatedButton } from '../../../components/animations';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <Layout>
       <div className="min-h-screen bg-background py-20 px-4">
@@ -11,10 +13,10 @@ export default function Contact() {
           <FadeIn>
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Contactez-moi
+                {t('contact.title')}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400">
-                Discutons de votre prochain projet ensemble
+                {t('contact.subtitle')}
               </p>
             </div>
           </FadeIn>
