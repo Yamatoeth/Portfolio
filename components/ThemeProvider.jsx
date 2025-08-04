@@ -2,12 +2,15 @@
 
 import { createContext, useContext, useState, useEffect } from 'react';
 
-type Theme = 'light' | 'dark';
+/**
+ * @typedef {'light' | 'dark'} Theme
+ */
 
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-}
+/**
+ * @typedef {Object} ThemeContextType
+ * @property {Theme} theme
+ * @property {() => void} toggleTheme
+ */
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
@@ -19,13 +22,13 @@ export const useTheme = () => {
   return context;
 };
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     // Récupérer le thème sauvegardé ou détecter la préférence système
-    const savedTheme = localStorage.getItem('theme') as Theme;
+    const savedTheme = localStorage.getItem('theme');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     const initialTheme = savedTheme || systemTheme;
     
