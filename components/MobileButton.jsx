@@ -16,8 +16,8 @@ const MobileButton = ({
   
   const variants = {
     primary: "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800",
-    secondary: "border border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 active:bg-blue-100 dark:active:bg-blue-900/30",
-    ghost: "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 active:bg-gray-100 dark:active:bg-gray-700"
+    secondary: "border border-blue-600 text-blue-600 hover:bg-blue-50 active:bg-blue-100",
+    ghost: "text-gray-600 hover:bg-gray-50 active:bg-gray-100"
   };
 
   const sizeClasses = "px-6 py-3 text-sm sm:text-base";

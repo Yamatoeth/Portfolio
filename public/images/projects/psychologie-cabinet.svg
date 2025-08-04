@@ -1,0 +1,12 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F3F4F6"/>
+  <rect x="100" y="100" width="1000" height="600" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+  <circle cx="200" cy="200" r="40" fill="#3B82F6"/>
+  <rect x="260" y="180" width="200" height="20" rx="4" fill="#3B82F6"/>
+  <rect x="260" y="220" width="150" height="16" rx="4" fill="#9CA3AF"/>
+  <rect x="100" y="320" width="1000" height="2" fill="#E5E7EB"/>
+  <rect x="150" y="380" width="300" height="200" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="500" y="380" width="300" height="200" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="850" y="380" width="300" height="200" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1"/>
+  <text x="600" y="750" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#374151" text-anchor="middle">Cabinet de Psychologie - Site Vitrine</text>
+</svg>

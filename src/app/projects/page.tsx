@@ -40,14 +40,14 @@ export default function Projects() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-background py-12 sm:py-20 px-4">
+      <div className="min-h-screen bg-white py-12 sm:py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="text-center mb-8 sm:mb-12">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                 {t('projects.title')}
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 {t('projects.subtitle')}
               </p>
             </div>
@@ -75,10 +75,10 @@ export default function Projects() {
             <FadeIn delay={0.3}>
               <div className="text-center py-12 sm:py-16">
                 <div className="text-4xl sm:text-6xl mb-4">🔍</div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-2">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">
                   {t('projects.noResults')}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
+                <p className="text-gray-600 mb-6 max-w-md mx-auto">
                   {t('projects.noResultsDesc')}
                 </p>
                 <AnimatedButton

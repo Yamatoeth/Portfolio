@@ -88,14 +88,14 @@ const ProjectStats = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 bg-gray-50">
       <Container>
         <FadeIn>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
               {t('stats.title', 'En Chiffres')}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-600">
               {t('stats.subtitle', 'Quelques statistiques sur mon parcours')}
             </p>
           </div>
@@ -104,14 +104,14 @@ const ProjectStats = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <div className="text-4xl mb-4">{stat.icon}</div>
                 <AnimatedCounter 
                   end={stat.number} 
                   suffix={stat.suffix}
                   duration={2000 + index * 200}
                 />
-                <p className="text-gray-600 dark:text-gray-400 mt-2 font-medium">
+                <p className="text-gray-600 mt-2 font-medium">
                   {stat.label}
                 </p>
               </div>

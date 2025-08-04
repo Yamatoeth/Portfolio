@@ -33,16 +33,16 @@ const ContactForm = () => {
 
   if (state.succeeded) {
     return (
-      <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center">
-        <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-semibold text-foreground mb-2">
+        <h3 className="text-2xl font-semibold text-gray-900 mb-2">
           {t('contact.success.title', 'Message envoyé !')}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
+        <p className="text-gray-600 mb-6">
           {t('contact.success.message', 'Merci pour votre message. Je vous répondrai dans les plus brefs délais.')}
         </p>
         <AnimatedButton 
@@ -56,14 +56,14 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-foreground mb-6">
+    <div className="bg-white p-8 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-semibold text-gray-900 mb-6">
         {t('contact.formTitle')}
       </h2>
       
       <form onSubmit={onSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
             {t('contact.form.name')}
           </label>
           <input
@@ -73,14 +73,14 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-foreground"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
             placeholder={t('contact.form.namePlaceholder')}
           />
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
             {t('contact.form.email')}
           </label>
           <input
@@ -90,14 +90,14 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-foreground"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
             placeholder={t('contact.form.emailPlaceholder')}
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-900 mb-2">
             {t('contact.form.subject')}
           </label>
           <input
@@ -107,14 +107,14 @@ const ContactForm = () => {
             value={formData.subject}
             onChange={handleInputChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-foreground"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
             placeholder={t('contact.form.subjectPlaceholder')}
           />
           <ValidationError prefix="Subject" field="subject" errors={state.errors} />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
             {t('contact.form.message')}
           </label>
           <textarea
@@ -124,7 +124,7 @@ const ContactForm = () => {
             onChange={handleInputChange}
             rows={5}
             required
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-foreground resize-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900 resize-none"
             placeholder={t('contact.form.messagePlaceholder')}
           ></textarea>
           <ValidationError prefix="Message" field="message" errors={state.errors} />
