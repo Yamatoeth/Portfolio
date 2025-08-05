@@ -193,16 +193,6 @@ const Testimonials = () => {
             />
           ))}
         </div>
-
-        {/* Auto-play indicator */}
-        <div className="flex justify-center mt-6">
-          <button
-            onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-            className="text-sm text-gray-500 hover:text-blue-600 transition-colors"
-          >
-            {isAutoPlaying ? '⏸️ Pause' : '▶️ Lecture automatique'}
-          </button>
-        </div>
       </Container>
     </section>
   );
