@@ -10,7 +10,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // Définition des outils pour chaque section
   const skillsData = {

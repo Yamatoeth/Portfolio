@@ -133,7 +133,7 @@ const ProjectSearch = ({ projects, onProjectsFiltered }: ProjectSearchProps) => 
         {/* Search Results Count */}
         {searchTerm && (
           <div className="absolute -bottom-6 left-0 text-sm text-gray-500">
-            {t('projects.search.searching')}: "{searchTerm}"
+            {t('projects.search.searching')}: &ldquo;{searchTerm}&rdquo;
           </div>
         )}
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { FadeIn, SlideInLeft, SlideInRight } from './animations';
+import { FadeIn } from './animations';
 import { getFeaturedProjects } from '../data/projectsTranslated';
 import { useState, useEffect } from 'react';
 // Custom SVG icons to avoid heroicons compatibility issues

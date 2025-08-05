@@ -3,6 +3,7 @@
 import { FadeIn, Container } from './animations';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface TestimonialProps {
   author: string;
@@ -33,14 +34,14 @@ const TestimonialCard = ({ author, role, company, text, rating, avatar, project 
 
       {/* Testimonial Text */}
       <blockquote className="text-gray-600 mb-8 italic text-lg md:text-xl text-center leading-relaxed">
-        "{text}"
+        &ldquo;{text}&rdquo;
       </blockquote>
 
       {/* Author Info */}
       <div className="flex flex-col items-center text-center">
         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
           {avatar ? (
-            <img src={avatar} alt={author} className="w-16 h-16 rounded-full object-cover" />
+            <Image src={avatar} alt={author} width={64} height={64} className="rounded-full object-cover" />
           ) : (
             <span className="text-blue-600 font-semibold text-2xl">
               {author.charAt(0)}
