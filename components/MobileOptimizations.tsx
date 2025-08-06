@@ -12,7 +12,7 @@ const MobileOptimizations = () => {
 
     // Empêcher le zoom sur double tap
     let lastTouchEnd = 0;
-    const preventDoubleTapZoom = (event) => {
+    const preventDoubleTapZoom = (event: TouchEvent) => {
       const now = (new Date()).getTime();
       if (now - lastTouchEnd <= 300) {
         event.preventDefault();
@@ -23,17 +23,17 @@ const MobileOptimizations = () => {
     // Smooth scroll pour iOS
     const enableSmoothScroll = () => {
       document.documentElement.style.scrollBehavior = 'smooth';
-      document.body.style.webkitOverflowScrolling = 'touch';
+      // Propriété webkit omise car non standard en TypeScript
     };
 
-    // Prévenir le pull-to-refresh sur mobile
-    const preventPullToRefresh = (e) => {
-      if (e.touches.length !== 1) return;
-      const touch = e.touches[0];
-      if (touch.clientY > 20 && window.scrollY === 0) {
-        e.preventDefault();
-      }
-    };
+    // Prévenir le pull-to-refresh sur mobile - DÉSACTIVÉ car peut bloquer le scroll
+    // const preventPullToRefresh = (e: TouchEvent) => {
+    //   if (e.touches.length !== 1) return;
+    //   const touch = e.touches[0];
+    //   if (touch.clientY > 20 && window.scrollY === 0) {
+    //     e.preventDefault();
+    //   }
+    // };
 
     // Optimisation des performances de scroll
     let ticking = false;
@@ -51,8 +51,8 @@ const MobileOptimizations = () => {
     window.addEventListener('resize', handleViewportHeight);
     window.addEventListener('orientationchange', handleViewportHeight);
     document.addEventListener('touchend', preventDoubleTapZoom, false);
-    document.addEventListener('touchstart', preventPullToRefresh, { passive: false });
-    window.addEventListener('scroll', optimizeScroll, { passive: true });
+    // document.addEventListener('touchstart', preventPullToRefresh, { passive: false }); // DÉSACTIVÉ
+    window.addEventListener('scroll', optimizeScroll, true);
 
     // Initialisation
     handleViewportHeight();
@@ -62,9 +62,9 @@ const MobileOptimizations = () => {
     return () => {
       window.removeEventListener('resize', handleViewportHeight);
       window.removeEventListener('orientationchange', handleViewportHeight);
-      document.removeEventListener('touchend', preventDoubleTapZoom);
-      document.removeEventListener('touchstart', preventPullToRefresh);
-      window.removeEventListener('scroll', optimizeScroll);
+      document.removeEventListener('touchend', preventDoubleTapZoom, false);
+      // document.removeEventListener('touchstart', preventPullToRefresh, { passive: false }); // DÉSACTIVÉ
+      window.removeEventListener('scroll', optimizeScroll, true);
     };
   }, []);
 

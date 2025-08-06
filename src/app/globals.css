@@ -16,7 +16,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  /* Permettre le scroll sur mobile */
+  touch-action: auto;
+  /* Fix pour le scroll sur iOS Safari */
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 /* Optimisations pour le scroll sur mobile */
@@ -69,6 +73,22 @@ body {
 .min-h-screen-mobile {
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Fix pour le scroll sur mobile */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Permettre le scroll sur le body et les conteneurs principaux */
+body, main, section, div {
+  touch-action: auto;
+}
+
+/* Exception pour les boutons et liens - empêcher le double-tap zoom */
+button, a, input, select, textarea {
+  touch-action: manipulation;
 }
 
 /* Amélioration du focus pour l'accessibilité */
