@@ -105,15 +105,17 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {t('home.skills.designer.title')}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {t('home.skills.designer.description')}
-                  </p>
+                  <div className="h-24 flex items-center mb-8">
+                    <p className="text-gray-600 leading-relaxed">
+                      {t('home.skills.designer.description')}
+                    </p>
+                  </div>
                   
-                  <div className="mb-6">
-                    <h4 className="text-emerald-600 font-semibold mb-2">
+                  <div className="mb-8">
+                    <h4 className="text-emerald-600 font-semibold mb-3">
                       {t('home.skills.designer.thingsTitle')}
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 h-12 flex items-center justify-center">
                       {t('home.skills.designer.things')}
                     </p>
                   </div>
@@ -122,7 +124,7 @@ export default function Home() {
                     <h4 className="text-emerald-600 font-semibold mb-3">
                       {t('home.skills.designer.toolsTitle')}
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       {skillsData.designer.tools.map((tool, index) => (
                         <div key={index} className="text-gray-600">
                           {tool}
@@ -144,15 +146,17 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {t('home.skills.developer.title')}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {t('home.skills.developer.description')}
-                  </p>
+                  <div className="h-24 flex items-center mb-8">
+                    <p className="text-gray-600 leading-relaxed">
+                      {t('home.skills.developer.description')}
+                    </p>
+                  </div>
                   
-                  <div className="mb-6">
-                    <h4 className="text-blue-600 font-semibold mb-2">
+                  <div className="mb-8">
+                    <h4 className="text-blue-600 font-semibold mb-3">
                       {t('home.skills.developer.languagesTitle')}
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 h-12 flex items-center justify-center">
                       {t('home.skills.developer.languages')}
                     </p>
                   </div>
@@ -161,7 +165,7 @@ export default function Home() {
                     <h4 className="text-blue-600 font-semibold mb-3">
                       {t('home.skills.developer.toolsTitle')}
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       {skillsData.developer.tools.map((tool, index) => (
                         <div key={index} className="text-gray-600">
                           {tool}
@@ -183,15 +187,17 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {t('home.skills.web3.title')}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {t('home.skills.web3.description')}
-                  </p>
+                  <div className="h-24 flex items-center mb-8">
+                    <p className="text-gray-600 leading-relaxed">
+                      {t('home.skills.web3.description')}
+                    </p>
+                  </div>
                   
-                  <div className="mb-6">
-                    <h4 className="text-purple-600 font-semibold mb-2">
+                  <div className="mb-8">
+                    <h4 className="text-purple-600 font-semibold mb-3">
                       {t('home.skills.web3.experienceTitle')}
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 h-12 flex items-center justify-center">
                       {t('home.skills.web3.experience')}
                     </p>
                   </div>
@@ -200,7 +206,7 @@ export default function Home() {
                     <h4 className="text-purple-600 font-semibold mb-3">
                       {t('home.skills.web3.toolsTitle')}
                     </h4>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       {skillsData.web3.tools.map((tool, index) => (
                         <div key={index} className="text-gray-600">
                           {tool}

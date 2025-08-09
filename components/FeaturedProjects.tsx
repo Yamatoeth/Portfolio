@@ -164,7 +164,7 @@ export default function FeaturedProjects() {
                   >
                     <div className="flex items-center gap-1">
                       <EyeIcon />
-                      <span>{t('projects.viewProject')}</span>
+                      <span>{t('projects.viewWebsite')}</span>
                     </div>
                   </a>
                   
@@ -176,7 +176,7 @@ export default function FeaturedProjects() {
                   >
                     <div className="flex items-center gap-1">
                       <ExternalLinkIcon />
-                      <span>{t('projects.github')}</span>
+                      <span>{t('projects.viewGithub')}</span>
                     </div>
                   </a>
                 </div>
