@@ -8,7 +8,7 @@ export const projectsData = {
       image: "/images/projects/wf-design.svg",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
       githubUrl: "https://github.com/yamatoeth/wf",
-      liveUrl: "https://yamatoeth.github.io/wf/",
+      liveUrl: "https://yamatoeth.github.io/WF/",
       featured: true,
       client: "WF Design",
       category: "Site vitrine",
