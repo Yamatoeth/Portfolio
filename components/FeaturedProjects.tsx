@@ -91,6 +91,13 @@ export default function FeaturedProjects() {
                 `}
                 onClick={() => handleProjectClick(project.liveUrl)}
               >
+                {/* Image illustrative du projet */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-contain z-0 opacity-80"
+                  style={{ pointerEvents: 'none' }}
+                />
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute inset-0 bg-black/20"></div>
