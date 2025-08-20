@@ -74,17 +74,17 @@ export const projectsData = {
     },
     {
       id: 6,
-      title: "Wedler Engineering",
-      description: "Plateforme web pour cabinet d'ingénierie avec présentation d'expertise et gestion de projets techniques.",
-      image: "/images/projects/wedler.svg",
-      technologies: ["Angular", "TypeScript", "Firebase", "Material UI"],
-      githubUrl: "https://github.com/yamatoeth/wedler-engineering",
-      liveUrl: "https://wedler-demo.vercel.app",
+      title: "NFT Smart Contract",
+      description: "DApp de mint de NFT ERC1155 sur Ethereum Sepolia. Interface moderne pour créer et gérer des collections NFT avec smart contracts.",
+      image: "/images/projects/juicewrld.png",
+      technologies: ["React", "Solidity", "Web3.js", "Ethereum"],
+      githubUrl: "https://github.com/Yamatoeth/JuiceWrldNFT",
+      liveUrl: "https://juice-wrld-nft.vercel.app/",
       featured: true,
-      client: "Wedler Engineering",
-      category: "Site professionnel",
-      color: "from-green-700 to-green-500",
-      logo: "W"
+      client: "NFT Project",
+      category: "Blockchain DApp",
+      color: "from-purple-700 to-pink-500",
+      logo: "NFT"
     }
   ],
   en: [
@@ -161,17 +161,17 @@ export const projectsData = {
     },
     {
       id: 6,
-      title: "Wedler Engineering",
-      description: "Web platform for engineering firm with expertise presentation and technical project management.",
-      image: "/images/projects/wedler.svg",
-      technologies: ["Angular", "TypeScript", "Firebase", "Material UI"],
-      githubUrl: "https://github.com/yamatoeth/wedler-engineering",
-      liveUrl: "https://wedler-demo.vercel.app",
+      title: "NFT Smart Contract",
+      description: "ERC1155 NFT minting DApp on Ethereum Sepolia. Modern interface for creating and managing NFT collections with smart contracts.",
+      image: "/images/projects/juicewrld.png",
+      technologies: ["React", "Solidity", "Web3.js", "Ethereum"],
+      githubUrl: "https://github.com/Yamatoeth/JuiceWrldNFT",
+      liveUrl: "https://juice-wrld-nft.vercel.app/",
       featured: true,
-      client: "Wedler Engineering",
-      category: "Professional website",
-      color: "from-green-700 to-green-500",
-      logo: "W"
+      client: "NFT Project",
+      category: "Blockchain DApp",
+      color: "from-purple-700 to-pink-500",
+      logo: "NFT"
     }
   ]
 };
