@@ -232,18 +232,18 @@ export default function Home() {
 
              <Container className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4 sm:gap-6">
               {[
-                  { name: t('technologies.html'), logo: '/logos/html.svg' },
-                  { name: t('technologies.css'), logo: '/logos/css.svg' },
-                  { name: t('technologies.javascript'), logo: '/logos/javascript.svg' },
-                  { name: t('technologies.react'), logo: '/logos/react.png' },
-                  { name: t('technologies.nextjs'), logo: '/logos/nextjs.svg' },
-                  { name: t('technologies.typescript'), logo: '/logos/typescript.svg' },
-                  { name: t('technologies.nodejs'), logo: '/logos/nodejs.png' },
-                  { name: t('technologies.mongodb'), logo: '/logos/mongo.png' },
-                  { name: t('technologies.tailwind'), logo: '/logos/tailwind.svg' },
-                  { name: t('technologies.solidity'), logo: '/logos/solidity.svg' },
-                  { name: t('technologies.rust'), logo: '/logos/rust.svg' },
-                  { name: t('technologies.ethers'), logo: '/logos/ethereum.svg' }
+                  { name: t('technologies.html'), logo: '/images/logos/html.svg' },
+                  { name: t('technologies.css'), logo: '/images/logos/css.svg' },
+                  { name: t('technologies.javascript'), logo: '/images/logos/javascript.svg' },
+                  { name: t('technologies.react'), logo: '/images/logos/react.png' },
+                  { name: t('technologies.nextjs'), logo: '/images/logos/nextjs.svg' },
+                  { name: t('technologies.typescript'), logo: '/images/logos/typescript.svg' },
+                  { name: t('technologies.nodejs'), logo: '/images/logos/nodejs.png' },
+                  { name: t('technologies.mongodb'), logo: '/images/logos/mongo.png' },
+                  { name: t('technologies.tailwind'), logo: '/images/logos/tailwind.svg' },
+                  { name: t('technologies.solidity'), logo: '/images/logos/solidity.svg' },
+                  { name: t('technologies.rust'), logo: '/images/logos/rust.svg' },
+                  { name: t('technologies.ethers'), logo: '/images/logos/ethereum.svg' }
                 ].map((tech) => (
                   <ListItem key={tech.name}>
                     <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg active:scale-95 sm:active:scale-100 transition-all duration-200 cursor-pointer">
