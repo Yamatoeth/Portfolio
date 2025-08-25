@@ -229,30 +229,33 @@ export default function Home() {
                 {t('home.techTitle')}
               </h2>
             </FadeIn>
-            
-            <Container className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4 sm:gap-6">
+
+             <Container className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4 sm:gap-6">
               {[
-                { name: t('technologies.html'), icon: '🌐' },
-                { name: t('technologies.css'), icon: '🎨' },
-                { name: t('technologies.javascript'), icon: '💛' },
-                { name: t('technologies.react'), icon: '⚛️' },
-                { name: t('technologies.nextjs'), icon: '🔺' },
-                { name: t('technologies.typescript'), icon: '📘' },
-                { name: t('technologies.nodejs'), icon: '🟢' },
-                { name: t('technologies.mongodb'), icon: '🍃' },
-                { name: t('technologies.tailwind'), icon: '💨' },
-                { name: t('technologies.solidity'), icon: '💎' },
-                { name: t('technologies.rust'), icon: '🦀' },
-                { name: t('technologies.ethers'), icon: '⚡' }
-              ].map((tech) => (
-                <ListItem key={tech.name}>
-                  <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg active:scale-95 sm:active:scale-100 transition-all duration-200 cursor-pointer">
-                    <div className="text-2xl sm:text-3xl mb-2">{tech.icon}</div>
-                    <p className="font-medium text-gray-900 text-sm sm:text-base">{tech.name}</p>
-                  </div>
-                </ListItem>
-              ))}
-            </Container>
+                  { name: t('technologies.html'), logo: '/logos/html.svg' },
+                  { name: t('technologies.css'), logo: '/logos/css.svg' },
+                  { name: t('technologies.javascript'), logo: '/logos/javascript.svg' },
+                  { name: t('technologies.react'), logo: '/logos/react.png' },
+                  { name: t('technologies.nextjs'), logo: '/logos/nextjs.svg' },
+                  { name: t('technologies.typescript'), logo: '/logos/typescript.svg' },
+                  { name: t('technologies.nodejs'), logo: '/logos/nodejs.png' },
+                  { name: t('technologies.mongodb'), logo: '/logos/mongo.png' },
+                  { name: t('technologies.tailwind'), logo: '/logos/tailwind.svg' },
+                  { name: t('technologies.solidity'), logo: '/logos/solidity.svg' },
+                  { name: t('technologies.rust'), logo: '/logos/rust.svg' },
+                  { name: t('technologies.ethers'), logo: '/logos/ethereum.svg' }
+                ].map((tech) => (
+                  <ListItem key={tech.name}>
+                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg active:scale-95 sm:active:scale-100 transition-all duration-200 cursor-pointer">
+                      <div className="text-2xl sm:text-3xl mb-2">
+                        <Image src={tech.logo} alt={tech.name} width={40} height={40} />
+                      </div>
+                      <p className="font-medium text-gray-900 text-sm sm:text-base">{tech.name}</p>
+                    </div>
+                  </ListItem>
+                ))}
+              </Container>
+                          
           </div>
         </section>
 
