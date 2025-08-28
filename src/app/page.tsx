@@ -246,11 +246,17 @@ export default function Home() {
                   { name: t('technologies.ethers'), logo: '/images/logos/ethereum.svg' }
                 ].map((tech) => (
                   <ListItem key={tech.name}>
-                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center hover:shadow-lg active:scale-95 sm:active:scale-100 transition-all duration-200 cursor-pointer">
-                      <div className="text-2xl sm:text-3xl mb-2">
-                        <Image src={tech.logo} alt={tech.name} width={40} height={40} />
+                    <div className="flex flex-col items-center p-4 transition-all duration-200 hover:scale-105">
+                      <div className="w-16 h-16 flex items-center justify-center mb-2">
+                        <Image 
+                          src={tech.logo} 
+                          alt={tech.name} 
+                          width={40} 
+                          height={40} 
+                          className="object-contain max-w-full max-h-full"
+                        />
                       </div>
-                      <p className="font-medium text-gray-900 text-sm sm:text-base">{tech.name}</p>
+                      <p className="text-sm font-medium text-gray-700 mt-2">{tech.name}</p>
                     </div>
                   </ListItem>
                 ))}
