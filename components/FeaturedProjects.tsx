@@ -2,8 +2,8 @@
 
 import { useTranslation } from 'react-i18next';
 import { FadeIn } from './animations';
-import { getFeaturedProjects } from '../data/projectsTranslated';
 import { useState, useEffect } from 'react';
+import { getFeaturedProjects } from '../data/projectsTranslated';
 // Custom SVG icons to avoid heroicons compatibility issues
 const EyeIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29,18 +29,46 @@ interface Project {
   featured: boolean;
   client: string;
   category: string;
-  color: string;
-  logo: string;
+  color?: string;
+  logo?: string;
+  etherscanUrl?: string;
+}
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl: string;
+  featured: boolean;
+  client: string;
+  category: string;
+  color?: string;
+  logo?: string;
   etherscanUrl?: string;
 }
 
 export default function FeaturedProjects() {
   const { t, i18n } = useTranslation();
-  const [projects, setProjects] = useState<Project[]>([]);
-
+  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
+  
   useEffect(() => {
-    const featuredProjects = getFeaturedProjects(i18n.language);
-    setProjects(featuredProjects);
+    // Récupérer les projets mis en avant depuis le fichier projectsTranslated.js
+    const loadProjects = async () => {
+      try {
+        // Utiliser la langue actuelle ou 'fr' par défaut
+        const language = i18n.language || 'fr';
+        const projects = getFeaturedProjects(language);
+        setFeaturedProjects(projects);
+      } catch (error) {
+        console.error('Erreur lors du chargement des projets:', error);
+        setFeaturedProjects([]);
+      }
+    };
+    
+    loadProjects();
   }, [i18n.language]);
 
   const handleProjectClick = (url: string) => {
@@ -70,7 +98,7 @@ export default function FeaturedProjects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <div
               key={project.id}
               className={`
@@ -111,17 +139,19 @@ export default function FeaturedProjects() {
                   {/* Logo/Title */}
                   <div>
                     <h3 className="text-white font-bold text-2xl mb-2 group-hover:scale-105 transition-transform">
-                      {project.logo.length <= 3 ? (
-                        <span className="text-4xl">{project.logo}</span>
+                      {project.logo ? (
+                        project.logo.length <= 3 ? (
+                          <span className="text-4xl">{project.logo}</span>
+                        ) : (
+                          project.logo
+                        )
                       ) : (
-                        project.logo
+                        project.title
                       )}
                     </h3>
-                    {project.logo !== project.title && (
-                      <p className="text-white/90 text-sm font-medium">
-                        {project.category}
-                      </p>
-                    )}
+                    <p className="text-white/90 text-sm font-medium">
+                      {project.category}
+                    </p>
                   </div>
 
                   {/* Hover overlay */}

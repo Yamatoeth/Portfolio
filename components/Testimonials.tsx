@@ -62,49 +62,45 @@ const TestimonialCard = ({ author, role, company, text, rating, avatar, project 
   );
 };
 
+interface Testimonial {
+  author: string;
+  role: string;
+  company: string;
+  text: string;
+  rating: number;
+  project: string;
+  avatar?: string;
+}
+
 const Testimonials = () => {
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
 
-  const testimonials = [
-    {
-      author: "Dr. Marie Dubois",
-      role: "Psychologue",
-      company: "Cabinet Privé",
-      text: "Site web professionnel et moderne qui a transformé ma présence en ligne. Les patients trouvent facilement les informations et prennent rendez-vous plus facilement.",
-      rating: 5,
-      project: "Site vitrine cabinet psychologie"
-    },
-    {
-      author: "Nguyễn Minh",
-      role: "Gérant",
-      company: "Boutique Déco Hanoï",
-      text: "L'application de gestion de stock a révolutionné notre façon de travailler. Interface intuitive et fonctionnalités parfaitement adaptées à nos besoins.",
-      rating: 5,
-      project: "App gestion de stock"
-    },
-    {
-      author: "Alex Chen",
-      role: "Community Manager",
-      company: "Crypto Collective",
-      text: "Excellent travail sur le smart contract NFT. Code propre, sécurisé et déploiement sans problème. Recommande vivement pour les projets Web3.",
-      rating: 5,
-      project: "Smart contract NFT"
-    },
-    {
-      author: "Sarah Johnson",
-      role: "Product Manager",
-      company: "DeFi Startup",
-      text: "Protocole DeFi impressionnant avec intégration Chainlink impeccable. L'expertise blockchain est évidente dans chaque ligne de code.",
-      rating: 5,
-      project: "Plateforme DeFi Lending"
-    }
-  ];
+  // Charger les témoignages depuis les traductions
+  useEffect(() => {
+    const loadTestimonials = () => {
+      const data = t('testimonials', { returnObjects: true });
+      // S'assurer que data est un tableau
+      const testimonialsArray = Array.isArray(data) 
+        ? data 
+        : Object.values(data || {});
+      
+      // Filtrer les entrées invalides
+      const validTestimonials = testimonialsArray.filter(
+        (item: any) => item && typeof item === 'object' && item.text && item.author
+      );
+      
+      setTestimonials(validTestimonials as Testimonial[]);
+    };
+    
+    loadTestimonials();
+  }, [t]);
 
   // Auto-play functionality
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || testimonials.length === 0) return;
     
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => 
@@ -130,45 +126,53 @@ const Testimonials = () => {
     setCurrentIndex(index);
   };
 
+  // Ne rien afficher tant que les témoignages ne sont pas chargés
+  if (testimonials.length === 0) {
+    return null; // ou un indicateur de chargement
+  }
+
   return (
-    <section className="py-20 bg-gray-50">
-      <Container>
+    <section className="py-20 px-4 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {t('testimonials.title', 'Ce que disent mes clients')}
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              {t('testimonials.title')}
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('testimonials.subtitle', 'Retours et témoignages de clients satisfaits sur mes différents projets')}
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('testimonials.subtitle')}
             </p>
           </div>
         </FadeIn>
 
-        {/* Carousel Container */}
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           {/* Navigation Arrows */}
-          <button
-            onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
-            aria-label="Témoignage précédent"
-          >
-            <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+          {testimonials.length > 1 && (
+            <>
+              <button
+                onClick={goToPrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                aria-label="Témoignage précédent"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-          <button
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 group"
-            aria-label="Témoignage suivant"
-          >
-            <svg className="w-6 h-6 text-gray-600 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+              <button
+                onClick={goToNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                aria-label="Témoignage suivant"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          )}
 
-          {/* Testimonial Card */}
-          <div className="px-16">
+          {/* Testimonials Carousel */}
+          <div className="overflow-hidden">
             <div 
               className="transition-all duration-500 ease-in-out"
               key={currentIndex}
@@ -178,22 +182,24 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center mt-12 space-x-3">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentIndex 
-                  ? 'bg-blue-600 w-8' 
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Aller au témoignage ${index + 1}`}
-            />
-          ))}
-        </div>
-      </Container>
+        {/* Dots Indicator - Afficher uniquement s'il y a plus d'un témoignage */}
+        {testimonials.length > 1 && (
+          <div className="flex justify-center mt-12 space-x-3">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  index === currentIndex 
+                    ? 'bg-blue-600 w-8' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Aller au témoignage ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </section>
   );
 };

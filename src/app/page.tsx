@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import MobileOptimizations from '../../components/MobileOptimizations';
 import Testimonials from '../../components/Testimonials';
 import FeaturedProjects from '../../components/FeaturedProjects';
+import TechTools from '../../components/TechTools';
 import { FadeIn, SlideInLeft, SlideInRight, Container, ListItem, AnimatedButton } from '../../components/animations';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
@@ -267,6 +268,9 @@ export default function Home() {
 
         {/* Featured Projects Section */}
         <FeaturedProjects />
+
+        {/* Tech & Tools Section */}
+        <TechTools />
 
         {/* Testimonials Section */}
         <Testimonials />
