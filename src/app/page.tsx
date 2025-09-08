@@ -75,8 +75,8 @@ export default function Home() {
                     <div className="w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl overflow-hidden">
                       <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
                         <Image
-                          src="/images/profile/yamato-profile.png"
-                          alt="Yamato - Web3 Developer"
+                          src="/images/profile/pfpirl.jpg"
+                          alt="Yamato - Web Developer"
                           fill
                           className="object-cover rounded-full border-4 border-white/20"
                           priority

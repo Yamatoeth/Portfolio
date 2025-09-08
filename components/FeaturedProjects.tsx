@@ -3,6 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import { FadeIn } from './animations';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { getFeaturedProjects } from '../data/projectsTranslated';
 // Custom SVG icons to avoid heroicons compatibility issues
 const EyeIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
@@ -120,12 +121,16 @@ export default function FeaturedProjects() {
                 onClick={() => handleProjectClick(project.liveUrl)}
               >
                 {/* Image illustrative du projet */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-contain z-0 opacity-80"
-                  style={{ pointerEvents: 'none' }}
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-contain z-0 opacity-80"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                </div>
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute inset-0 bg-black/20"></div>

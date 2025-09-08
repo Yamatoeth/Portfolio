@@ -1,6 +1,6 @@
 'use client';
 
-import { FadeIn, Container } from './animations';
+import { FadeIn } from './animations';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -88,8 +88,24 @@ const Testimonials = () => {
         : Object.values(data || {});
       
       // Filtrer les entrées invalides
+      interface TestimonialItem {
+        text: string;
+        author: string;
+        role?: string;
+        company?: string;
+        rating?: number;
+        project?: string;
+        avatar?: string;
+      }
+
       const validTestimonials = testimonialsArray.filter(
-        (item: any) => item && typeof item === 'object' && item.text && item.author
+        (item: unknown): item is TestimonialItem => 
+          !!item && 
+          typeof item === 'object' && 
+          'text' in item && 
+          'author' in item && 
+          typeof (item as TestimonialItem).text === 'string' &&
+          typeof (item as TestimonialItem).author === 'string'
       );
       
       setTestimonials(validTestimonials as Testimonial[]);
