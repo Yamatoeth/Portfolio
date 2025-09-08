@@ -10,13 +10,13 @@ const LanguageSelector = () => {
   const dropdownRef = useRef(null);
 
   const languages = [
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'cn', name: '中文', flag: '🇨🇳' },
-    { code: 'jp', name: '日本語', flag: '🇯🇵' },
-    { code: 'kr', name: '한국어', flag: '🇰🇷' },
-    { code: 'th', name: 'ไทย', flag: '🇹🇭' },
-    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
+    { code: 'fr', displayCode: 'FR', name: 'Français', flag: '🇫🇷' },
+    { code: 'en', displayCode: 'EN', name: 'English', flag: '🇺🇸' },
+    { code: 'zh', displayCode: 'CN', name: '中文', flag: '🇨🇳' },
+    { code: 'ja', displayCode: 'JP', name: '日本語', flag: '🇯🇵' },
+    { code: 'ko', displayCode: 'KR', name: '한국어', flag: '🇰🇷' },
+    { code: 'th', displayCode: 'TH', name: 'ไทย', flag: '🇹🇭' },
+    { code: 'vi', displayCode: 'VI', name: 'Tiếng Việt', flag: '🇻🇳' },
   ];
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const LanguageSelector = () => {
           {currentLanguage.flag}
         </span>
         <span className="text-sm font-medium text-gray-700">
-          {currentLanguage.code.toUpperCase()}
+          {currentLanguage.displayCode}
         </span>
         <svg 
           className={`w-4 h-4 ml-1 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
