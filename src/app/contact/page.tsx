@@ -15,7 +15,7 @@ export default function Contact() {
                 Get In Touch
               </h1>
               <p className="text-xl text-gray-600">
-                Have a question or want to work together? I'd love to hear from you!
+                Have a question or want to work together? I&apos;d love to hear from you!
               </p>
             </div>
           </FadeIn>
@@ -81,7 +81,7 @@ export default function Contact() {
                   <div className="mt-8 p-6 bg-gray-50 rounded-lg">
                     <h3 className="font-medium text-gray-900">Availability</h3>
                     <p className="text-gray-600">
-                      I'm currently available for freelance opportunities. Feel free to reach out to discuss your project!
+                      I&apos;m currently available for freelance opportunities. Feel free to reach out to discuss your project!
                     </p>
                   </div>
                 </div>

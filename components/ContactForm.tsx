@@ -45,7 +45,7 @@ const ContactForm = () => {
           Message sent successfully!
         </h3>
         <p className="text-gray-600 mb-6">
-          Thank you for your message. I'll get back to you as soon as possible.
+          Thank you for your message. I&apos;ll get back to you as soon as possible.
         </p>
         <AnimatedButton 
           onClick={() => window.location.reload()}

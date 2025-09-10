@@ -195,7 +195,7 @@ export default function Home() {
                   
                   <div className="mb-8">
                     <h4 className="text-purple-600 font-semibold mb-3">
-                      Experiences I'm exploring:
+                      Experiences I&apos;m exploring:
                     </h4>
                     <p className="text-gray-600 h-12 flex items-center justify-center">
                       Smart Contracts, DeFi, NFTs, DAOs, Web3 Development

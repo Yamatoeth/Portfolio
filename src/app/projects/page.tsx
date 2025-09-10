@@ -28,7 +28,7 @@ export default function Projects() {
 
   useEffect(() => {
     setFilteredProjects(projects);
-  }, [projects]);
+  }, []);
 
   const handleProjectsFilter = (filtered: Project[]) => {
     setFilteredProjects(filtered);
@@ -75,7 +75,7 @@ export default function Projects() {
                   No projects found matching your criteria.
                 </h3>
                 <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                  Sorry, it seems like we couldn't find any projects that match your search criteria. Try searching again or filtering by technology.
+                  Sorry, it seems like we couldn&apos;t find any projects that match your search criteria. Try searching again or filtering by technology.
                 </p>
                 <AnimatedButton
                   onClick={() => setFilteredProjects(allProjects)}

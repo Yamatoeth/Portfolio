@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { AnimatedButton } from './animations';
 
 interface Project {
@@ -26,7 +26,7 @@ const ProjectSearch: React.FC<ProjectSearchProps> = ({ projects, onProjectsFilte
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [filter, setFilter] = useState<string>('all');
 
-  const filterProjects = (term: string, techFilter: string) => {
+  const filterProjects = useCallback((term: string, techFilter: string) => {
     let filtered = [...projects];
 
     // Apply search term filter
@@ -50,12 +50,12 @@ const ProjectSearch: React.FC<ProjectSearchProps> = ({ projects, onProjectsFilte
     }
 
     onProjectsFiltered(filtered);
-  };
+  }, [projects, onProjectsFiltered]);
 
   // Apply filters when search term or filter changes
   useEffect(() => {
     filterProjects(searchTerm, filter);
-  }, [searchTerm, filter, projects, onProjectsFiltered]);
+  }, [searchTerm, filter, filterProjects]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value.toLowerCase();
