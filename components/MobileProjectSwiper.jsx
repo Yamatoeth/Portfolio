@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import ProjectCard from './ProjectCard';
 
 const MobileProjectSwiper = ({ projects }) => {
@@ -10,8 +9,6 @@ const MobileProjectSwiper = ({ projects }) => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const containerRef = useRef(null);
-  const { t } = useTranslation();
-
   const handleTouchStart = (e) => {
     setIsDragging(true);
     setStartX(e.touches[0].pageX - containerRef.current.offsetLeft);

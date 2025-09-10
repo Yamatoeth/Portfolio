@@ -1,10 +1,8 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
 export default function Footer() {
-  const { t } = useTranslation();
 
   return (
     <footer className="bg-white">
@@ -13,16 +11,16 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-lg px-8 py-12 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              {t('footer.startProject.title')}
+              Start a project
             </h3>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              {t('footer.startProject.subtitle')}
+              Interested in collaborating? Let's create something together.
             </p>
             <Link 
               href="/contact" 
               className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
             >
-              {t('footer.startProject.button')}
+              Let's talk
             </Link>
           </div>
         </div>
@@ -37,12 +35,12 @@ export default function Footer() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-white/80 mb-6 max-w-2xl mx-auto">
-            {t('footer.mainFooter.description')}
+            Let's build something amazing together. Get in touch for project inquiries or just to say hello!
           </div>
           
           {/* Social media icons */}
           <div className="flex justify-center space-x-6 mb-8">
-            <span className="text-white/80 text-sm">{t('footer.mainFooter.social')}</span>
+            <span className="text-white/80 text-sm">Follow me on</span>
             <div className="flex space-x-4 ml-4">
               <a 
                 href="https://twitter.com/yamatoeth" 
@@ -54,7 +52,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com/in/yamatoeth" 
+                href="https://www.linkedin.com/in/simon-lechevalier-5ba743198" 
                 className="text-white/60 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
@@ -76,7 +74,7 @@ export default function Footer() {
           
           {/* Signature */}
           <div className="text-white font-medium text-lg">
-            {t('footer.mainFooter.signature')}
+            Simon - Web3 Developer
           </div>
         </div>
         

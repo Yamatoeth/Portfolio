@@ -1,80 +1,132 @@
 export const projects = [
   {
     id: 1,
-    title: "Site vitrine pour un cabinet de psychologie",
-    description: "Site web vitrine professionnel pour présenter l'activité du cabinet, rassurer les clients et faciliter la prise de rendez-vous. Design responsive et optimisé pour le SEO.",
-    image: "/images/psychologie-cabinet.png",
-    technologies: ["WordPress", "Elementor", "RankMath", "CSS"],
-    githubUrl: "https://github.com/yamatoeth/cabinet-psychologie",
-    liveUrl: "https://cabinet-psychologie-demo.com",
+    title: "WF Design + Build",
+    description: "Professional showcase website for a design and construction agency. Modern architecture and elegant user interface.",
+    image: "/images/projects/wf.png",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    githubUrl: "https://github.com/yamatoeth/WF",
+    liveUrl: "https://yamatoeth.github.io/WF/",
     featured: true,
-    client: "Cabinet privé",
-    category: "Site vitrine"
+    client: "WF Design",
+    category: "Showcase website",
+    color: "from-blue-900 to-blue-600",
+    logo: "WF"
   },
   {
     id: 2,
-    title: "App de gestion de stock pour un magasin local",
-    description: "Application web sur mesure permettant au staff de gérer les entrées et sorties de stock en temps réel. Interface claire et mobile-friendly avec authentification sécurisée.",
-    image: "/images/stock-management.png",
-    technologies: ["React", "Tailwind CSS", "Firebase", "JavaScript"],
-    githubUrl: "https://github.com/yamatoeth/stock-management",
-    liveUrl: "https://stock-management-demo.vercel.app",
+    title: "Burkett & Co",
+    description: "Web platform for accounting firm with client management and professional services. Modern and secure interface.",
+    image: "/images/projects/burkett.png",
+    technologies: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    githubUrl: "https://github.com/yamatoeth/Burkett-Co",
+    liveUrl: "https://yamatoeth.github.io/Burkett-Co",
     featured: true,
-    client: "Magasin de déco à Hanoï",
-    category: "Application web"
+    client: "Burkett & Co",
+    category: "Web Application",
+    color: "from-teal-600 to-teal-400",
+    logo: "Burkett & Co"
   },
   {
     id: 3,
-    title: "Smart contract de mint NFT + intégration front",
-    description: "Projet Web3 complet permettant aux utilisateurs de minter des NFT uniques depuis une interface web moderne. Smart contract déployé sur testnet avec vérification Etherscan.",
-    image: "/images/nft-mint.png",
-    technologies: ["Solidity", "Hardhat", "React", "Wagmi", "Ethers.js"],
-    githubUrl: "https://github.com/yamatoeth/nft-mint-contract",
-    liveUrl: "https://nft-mint-demo.vercel.app",
+    title: "SolWatcher",
+    description: "Solana dashboard to track wallet balance, tokens held, and recent transactions. Uses the Helius API for on-chain data and Supabase for storage.",
+    image: "/images/projects/solwatcher.png",
+    technologies: ["React", "Helius API", "Supabase", "Tailwind CSS"],
+    githubUrl: "https://github.com/yamatoeth/SolWatcher",
+    liveUrl: "https://solwatcher-silk.vercel.app/",
     featured: true,
-    client: "Projet personnel / Web3",
+    client: "Community Tool",
     category: "Blockchain",
-    etherscanUrl: "https://sepolia.etherscan.io/address/0x..."
+    color: "from-purple-600 to-blue-500",
+    logo: "SolWatcher"
   },
   {
     id: 4,
-    title: "Plateforme DeFi de Lending & Borrowing",
-    description: "Protocole décentralisé inspiré d'Aave permettant le prêt et l'emprunt de crypto-actifs avec intérêts dynamiques. Système de collateral ratio avec liquidation automatique et oracles Chainlink intégrés.",
-    image: "/images/defi-lending.png",
-    technologies: ["Solidity", "Hardhat", "Chainlink", "React", "Ethers.js", "Tailwind CSS"],
-    githubUrl: "https://github.com/yamatoeth/defi-lending-protocol",
-    liveUrl: "https://defi-lending-demo.vercel.app",
+    title: "GLC Solutions",
+    description: "Website for technology solutions company with service presentation and portfolio showcase.",
+    image: "/images/projects/glc.png",
+    technologies: ["Vue.js", "Nuxt.js", "Tailwind CSS", "Netlify"],
+    githubUrl: "https://github.com/yamatoeth/GlcSolutions",
+    liveUrl: "https://yamatoeth.github.io/GlcSolutions/",
     featured: true,
-    client: "Projet personnel / DeFi",
-    category: "DeFi Protocol",
-    etherscanUrl: "https://sepolia.etherscan.io/address/0x..."
+    client: "GLC Solutions",
+    category: "Corporate website",
+    color: "from-gray-800 to-gray-600",
+    logo: "GLC"
   },
   {
     id: 5,
-    title: "dApp Web3 x IA : Staking, Gouvernance & Swap",
-    description: "Protocole innovant combinant staking de tokens, gouvernance communautaire et IA pour les décisions stratégiques. Inclut un AMM simple, système de vote on-chain et backend IA pour les insights.",
-    image: "/images/web3-ai-dapp.png",
-    technologies: ["Solidity", "Rust", "React", "Wagmi", "Python AI", "IPFS"],
-    githubUrl: "https://github.com/yamatoeth/web3-ai-governance",
-    liveUrl: "https://web3-ai-dapp-demo.vercel.app",
+    title: "Coupal Construction",
+    description: "Showcase website for construction company with project gallery and online quote form.",
+    image: "/images/projects/coupalconstruction.png",
+    technologies: ["WordPress", "Elementor", "WooCommerce", "CSS"],
+    githubUrl: "https://github.com/yamatoeth/CoupalConstruction",
+    liveUrl: "https://yamatoeth.github.io/CoupalConstruction",
     featured: true,
-    client: "R&D Web3/AI",
-    category: "Web3 x IA",
-    etherscanUrl: "https://explorer.solana.com/address/..."
-  }
+    client: "Coupal",
+    category: "Showcase website",
+    color: "from-red-600 to-orange-500",
+    logo: "COUPAL"
+  },
+  {
+    id: 6,
+    title: "NFT Smart Contract",
+    description: "ERC1155 NFT minting DApp on Ethereum Sepolia. Modern interface for creating and managing NFT collections with smart contracts.",
+    image: "/images/projects/juicewrld.png",
+    technologies: ["React", "Solidity", "Web3.js", "Ethereum"],
+    githubUrl: "https://github.com/Yamatoeth/JuiceWrldNFT",
+    liveUrl: "https://juice-wrld-nft.vercel.app/",
+    featured: true,
+    client: "NFT Project",
+    category: "Blockchain DApp",
+    color: "from-purple-700 to-pink-500",
+    logo: "NFT"
+  },
+  {
+    id: 7,
+    title: "Folderly",
+    description: "AI agent for file organization and optimization",
+    image: "/images/projects/in-development.png",
+    technologies: ["Python", "AI", "autonomous agents", "NodeJs"],
+    githubUrl: "https://github.com/Yamatoeth/Folderly",
+    liveUrl: "https://juice-wrld-nft.vercel.app/",
+    featured: true,
+    client: "Personnal Project",
+    category: "Saas",
+    color: "from-purple-700 to-pink-500",
+    logo: "Folderly"
+  },
+  {
+    id: 8,
+    title: "FileScanner",
+    description: "Saas for file scanning and analysis",
+    image: "/images/projects/in-development.png",
+    technologies: ["", "Solidity", "Web3.js", "Ethereum"],
+    githubUrl: "https://github.com/Yamatoeth/Filescanner",
+    liveUrl: "https://juice-wrld-nft.vercel.app/",
+    featured: true,
+    client: "Personnal Project",
+    category: "Saas",
+    color: "from-purple-700 to-pink-500",
+    logo: "FileScanner"
+  },
+  
+
+
 ];
 
-// Fonction utilitaire pour récupérer un projet par ID
+// Utility function to get a project by ID
 export const getProjectById = (id) => {
   return projects.find(project => project.id === parseInt(id));
 };
 
-// Fonction utilitaire pour récupérer les projets vedettes
+// Utility function to get featured projects
 export const getFeaturedProjects = () => {
   return projects.filter(project => project.featured);
 };
 
-// Fonction utilitaire pour récupérer les projets par technologie
+// Utility function to get projects by technology
 export const getProjectsByTechnology = (technology) => {
   return projects.filter(project => 
     project.technologies.some(tech => 

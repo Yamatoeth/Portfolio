@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { structuredData } from '../../lib/seo';
-import I18nProvider from '../../components/I18nProvider';
 import { ThemeProvider } from '../../components/ThemeProvider';
 import "./globals.css";
 
@@ -63,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
@@ -109,9 +108,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <I18nProvider>
-            {children}
-          </I18nProvider>
+          {children}
         </ThemeProvider>
       </body>
     </html>

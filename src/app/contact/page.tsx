@@ -3,10 +3,8 @@
 import Layout from '../../../components/Layout';
 import ContactForm from '../../../components/ContactForm';
 import { FadeIn, SlideInLeft, Container } from '../../../components/animations';
-import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
-  const { t } = useTranslation();
   return (
     <Layout>
       <div className="min-h-screen bg-white py-20 px-4">
@@ -14,10 +12,10 @@ export default function Contact() {
           <FadeIn>
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                {t('contact.title')}
+                Get In Touch
               </h1>
               <p className="text-xl text-gray-600">
-                {t('contact.subtitle')}
+                Have a question or want to work together? I'd love to hear from you!
               </p>
             </div>
           </FadeIn>
@@ -26,7 +24,7 @@ export default function Contact() {
             <SlideInLeft>
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Informations de contact
+                  Contact Information
                 </h2>
                 
                 <div className="space-y-6">
@@ -37,7 +35,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-medium text-gray-900">Email</h3>
                       <a 
-                        href="mailto:hello@monportfolio.com" 
+                        href="mailto:yamatocontact@proton.me" 
                         className="text-blue-600 hover:text-blue-700"
                       >
                         yamatocontact@proton.me
@@ -50,44 +48,42 @@ export default function Contact() {
                       <span className="text-blue-600 text-xl">🐙</span>
                     </div>
                     <div>
-                      <h3 className="font-medium text-gray-900">GitHub</h3>
-                      <a 
-                        href="https://github.com/yamatoeth" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700"
-                      >
-                        github.com/yamatoeth
-                      </a>
+                      <h3 className="font-medium text-gray-900">Social Media</h3>
+                      <div className="flex space-x-4 mt-2">
+                        <a 
+                          href="https://twitter.com/yamatoeth" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-blue-500"
+                        >
+                          Twitter
+                        </a>
+                        <a 
+                          href="https://github.com/yamatoeth" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          GitHub
+                        </a>
+                        <a 
+                          href="https://linkedin.com/in/simon-lechevalier-5ba743198" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-blue-700"
+                        >
+                          LinkedIn
+                        </a>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <span className="text-blue-600 text-xl">🐦</span>
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-gray-900">Twitter</h3>
-                      <a 
-                        href="https://twitter.com/yamatoeth" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700"
-                      >
-                        @yamatoeth
-                      </a>
-                    </div>
+                  <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+                    <h3 className="font-medium text-gray-900">Availability</h3>
+                    <p className="text-gray-600">
+                      I'm currently available for freelance opportunities. Feel free to reach out to discuss your project!
+                    </p>
                   </div>
-                </div>
-
-                <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-3">
-                    Disponibilité
-                  </h3>
-                  <p className="text-gray-600">
-                    Je suis actuellement disponible pour de nouveaux projets. 
-                    N&apos;hésitez pas à me contacter pour discuter de vos besoins !
-                  </p>
                 </div>
               </div>
             </SlideInLeft>

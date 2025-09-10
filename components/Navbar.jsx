@@ -2,13 +2,10 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { NavAnimation, AnimatedButton } from './animations';
-import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -33,27 +30,25 @@ const Navbar = () => {
                   href="/"
                   className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
-                  {t('nav.home')}
+                  Home
                 </Link>
                 <Link
                   href="/projects"
                   className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
-                  {t('nav.projects')}
+                  Projects
                 </Link>
                 <Link
                   href="/contact"
                   className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
-                  {t('nav.contact')}
+                  Contact
                 </Link>
-                <LanguageSelector />
               </div>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-2">
-              <LanguageSelector />
+            <div className="md:hidden flex items-center">
               <AnimatedButton
                 onClick={toggleMenu}
                 className="text-gray-700 hover:text-blue-600 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-transform duration-200"
@@ -61,7 +56,7 @@ const Navbar = () => {
                   transform: isMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)'
                 }}
               >
-                <span className="sr-only">{t('nav.openMenu', 'Ouvrir le menu')}</span>
+                <span className="sr-only">Open menu</span>
                 {!isMenuOpen ? (
                   <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -88,7 +83,7 @@ const Navbar = () => {
             >
               <span className="flex items-center">
                 <span className="mr-2">🏠</span>
-                {t('nav.home')}
+                Home
               </span>
             </Link>
             <Link
@@ -98,7 +93,7 @@ const Navbar = () => {
             >
               <span className="flex items-center">
                 <span className="mr-2">💼</span>
-                {t('nav.projects')}
+                Projects
               </span>
             </Link>
             <Link
@@ -108,7 +103,7 @@ const Navbar = () => {
             >
               <span className="flex items-center">
                 <span className="mr-2">📧</span>
-                {t('nav.contact')}
+                Contact
               </span>
             </Link>
           </div>

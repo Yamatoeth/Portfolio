@@ -2,18 +2,14 @@
 
 import Layout from '../../components/Layout';
 import MobileOptimizations from '../../components/MobileOptimizations';
-import Testimonials from '../../components/Testimonials';
 import FeaturedProjects from '../../components/FeaturedProjects';
 import TechTools from '../../components/TechTools';
 import { FadeIn, SlideInLeft, SlideInRight, Container, ListItem, AnimatedButton } from '../../components/animations';
-import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home() {
-  const { t } = useTranslation();
-
-  // Définition des outils pour chaque section
+  // Tools for each section
   const skillsData = {
     designer: {
       tools: ["Figma", "Sketch", "Photoshop", "Illustrator"]
@@ -38,14 +34,14 @@ export default function Home() {
                 <div className="text-center lg:text-left">
                   <FadeIn delay={0.2}>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                      {t('home.title')}
-                      <span className="text-blue-600"> {t('home.titleHighlight')}</span>
+                      Full-Stack Developer
+                      <span className="text-blue-600"> & Web3 Enthusiast</span>
                     </h1>
                   </FadeIn>
                   
                   <FadeIn delay={0.4}>
                     <div className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                      {t('home.subtitle').split('\n').map((line, index) => (
+                      {["Building modern web applications with a focus on user experience.", "Creating secure and efficient smart contracts for the decentralized web.", "Bridging the gap between design and development."].map((line, index) => (
                         <p key={index} className="mb-2">
                           {line}
                         </p>
@@ -57,12 +53,12 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                       <Link href="/projects">
                         <AnimatedButton className="w-full sm:w-auto bg-blue-600 text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 font-medium text-center">
-                          {t('home.viewProjects')}
+                          View My Projects
                         </AnimatedButton>
                       </Link>
                       <Link href="/contact">
                         <AnimatedButton className="w-full sm:w-auto border border-blue-600 text-blue-600 px-6 sm:px-8 py-3 rounded-lg hover:bg-blue-50 active:scale-95 transition-all duration-200 font-medium text-center">
-                          {t('home.contactMe')}
+                          Contact Me
                         </AnimatedButton>
                       </Link>
                     </div>
@@ -90,6 +86,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Featured Projects Section */}
+        <FeaturedProjects />
+
         {/* Skills Section - Inspired by the portfolio design */}
         <section className="py-16 sm:py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
@@ -104,26 +103,26 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {t('home.skills.designer.title')}
+                    Designer
                   </h3>
                   <div className="h-24 flex items-center mb-8">
                     <p className="text-gray-600 leading-relaxed">
-                      {t('home.skills.designer.description')}
+                      I value simple content structure, clean design patterns, and thoughtful interactions.
                     </p>
                   </div>
                   
                   <div className="mb-8">
                     <h4 className="text-emerald-600 font-semibold mb-3">
-                      {t('home.skills.designer.thingsTitle')}
+                      Things I enjoy designing:
                     </h4>
                     <p className="text-gray-600 h-12 flex items-center justify-center">
-                      {t('home.skills.designer.things')}
+                      UX, UI, Web, Mobile, Logos
                     </p>
                   </div>
                   
                   <div>
                     <h4 className="text-emerald-600 font-semibold mb-3">
-                      {t('home.skills.designer.toolsTitle')}
+                      Design Tools:
                     </h4>
                     <div className="space-y-1">
                       {skillsData.designer.tools.map((tool, index) => (
@@ -145,26 +144,26 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {t('home.skills.developer.title')}
+                    Frontend Developer
                   </h3>
                   <div className="h-24 flex items-center mb-8">
                     <p className="text-gray-600 leading-relaxed">
-                      {t('home.skills.developer.description')}
+                      I like to code projects from scratch and bring ideas to life in the browser.
                     </p>
                   </div>
                   
                   <div className="mb-8">
                     <h4 className="text-blue-600 font-semibold mb-3">
-                      {t('home.skills.developer.languagesTitle')}
+                      Languages I speak:
                     </h4>
                     <p className="text-gray-600 h-12 flex items-center justify-center">
-                      {t('home.skills.developer.languages')}
+                      HTML, CSS, JavaScript, TypeScript, React
                     </p>
                   </div>
                   
                   <div>
                     <h4 className="text-blue-600 font-semibold mb-3">
-                      {t('home.skills.developer.toolsTitle')}
+                      Dev Tools:
                     </h4>
                     <div className="space-y-1">
                       {skillsData.developer.tools.map((tool, index) => (
@@ -186,26 +185,26 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {t('home.skills.web3.title')}
+                    Web3 Enthusiast
                   </h3>
                   <div className="h-24 flex items-center mb-8">
                     <p className="text-gray-600 leading-relaxed">
-                      {t('home.skills.web3.description')}
+                      Passionate about blockchain and decentralized technologies, building modern interfaces for the Web3 ecosystem.
                     </p>
                   </div>
                   
                   <div className="mb-8">
                     <h4 className="text-purple-600 font-semibold mb-3">
-                      {t('home.skills.web3.experienceTitle')}
+                      Experiences I'm exploring:
                     </h4>
                     <p className="text-gray-600 h-12 flex items-center justify-center">
-                      {t('home.skills.web3.experience')}
+                      Smart Contracts, DeFi, NFTs, DAOs, Web3 Development
                     </p>
                   </div>
                   
                   <div>
                     <h4 className="text-purple-600 font-semibold mb-3">
-                      {t('home.skills.web3.toolsTitle')}
+                      Web3 Tools:
                     </h4>
                     <div className="space-y-1">
                       {skillsData.web3.tools.map((tool, index) => (
@@ -225,26 +224,21 @@ export default function Home() {
         {/* Technologies Section */}
         <section className="py-12 sm:py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <FadeIn>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
-                {t('home.techTitle')}
-              </h2>
-            </FadeIn>
-
+            
              <Container className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-4 sm:gap-6">
               {[
-                  { name: t('technologies.html'), logo: '/images/logos/html.svg' },
-                  { name: t('technologies.css'), logo: '/images/logos/css.svg' },
-                  { name: t('technologies.javascript'), logo: '/images/logos/javascript.svg' },
-                  { name: t('technologies.react'), logo: '/images/logos/react.png' },
-                  { name: t('technologies.nextjs'), logo: '/images/logos/nextjs.svg' },
-                  { name: t('technologies.typescript'), logo: '/images/logos/typescript.svg' },
-                  { name: t('technologies.nodejs'), logo: '/images/logos/nodejs.png' },
-                  { name: t('technologies.mongodb'), logo: '/images/logos/mongo.png' },
-                  { name: t('technologies.tailwind'), logo: '/images/logos/tailwind.svg' },
-                  { name: t('technologies.solidity'), logo: '/images/logos/solidity.svg' },
-                  { name: t('technologies.rust'), logo: '/images/logos/rust.svg' },
-                  { name: t('technologies.ethers'), logo: '/images/logos/ethereum.svg' }
+                  { name: 'HTML', logo: '/images/logos/html.svg' },
+                  { name: 'CSS', logo: '/images/logos/css.svg' },
+                  { name: 'JavaScript', logo: '/images/logos/javascript.svg' },
+                  { name: 'React', logo: '/images/logos/react.png' },
+                  { name: 'Next.js', logo: '/images/logos/nextjs.svg' },
+                  { name: 'TypeScript', logo: '/images/logos/typescript.svg' },
+                  { name: 'Node.js', logo: '/images/logos/nodejs.png' },
+                  { name: 'MongoDB', logo: '/images/logos/mongo.png' },
+                  { name: 'Tailwind CSS', logo: '/images/logos/tailwind.svg' },
+                  { name: 'Solidity', logo: '/images/logos/solidity.svg' },
+                  { name: 'Rust', logo: '/images/logos/rust.svg' },
+                  { name: 'Ethers.js', logo: '/images/logos/ethereum.svg' }
                 ].map((tech) => (
                   <ListItem key={tech.name}>
                     <div className="flex flex-col items-center p-4 transition-all duration-200 hover:scale-105">
@@ -266,14 +260,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Projects Section */}
-        <FeaturedProjects />
-
+        
+        
         {/* Tech & Tools Section */}
         <TechTools />
-
-        {/* Testimonials Section */}
-        <Testimonials />
       </div>
     </Layout>
   );

@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { useTranslation } from 'react-i18next';
 import { AnimatedButton } from './animations';
 
 const ContactForm = () => {
-  const { t } = useTranslation();
-  const [state, handleSubmit] = useForm("your-formspree-id"); // Remplacer par votre ID Formspree
+  // TODO: Remplacer par votre ID Formspree réel
+  // 1. Allez sur https://formspree.io/
+  // 2. Créez un compte et créez un nouveau formulaire
+  // 3. Copiez l'ID du formulaire et remplacez "xqazvqaj" ci-dessous
+  const [state, handleSubmit] = useForm("xandvawb");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,16 +42,16 @@ const ContactForm = () => {
           </svg>
         </div>
         <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-          {t('contact.success.title', 'Message envoyé !')}
+          Message sent successfully!
         </h3>
         <p className="text-gray-600 mb-6">
-          {t('contact.success.message', 'Merci pour votre message. Je vous répondrai dans les plus brefs délais.')}
+          Thank you for your message. I'll get back to you as soon as possible.
         </p>
         <AnimatedButton 
           onClick={() => window.location.reload()}
           className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
         >
-          {t('contact.success.newMessage', 'Envoyer un nouveau message')}
+          Send a new message
         </AnimatedButton>
       </div>
     );
@@ -58,13 +60,13 @@ const ContactForm = () => {
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg">
       <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-        {t('contact.formTitle')}
+        Get In Touch
       </h2>
       
       <form onSubmit={onSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
-            {t('contact.form.name')}
+            Name
           </label>
           <input
             type="text"
@@ -74,14 +76,14 @@ const ContactForm = () => {
             onChange={handleInputChange}
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-            placeholder={t('contact.form.namePlaceholder')}
+            placeholder="John Doe"
           />
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
 
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-            {t('contact.form.email')}
+            Email
           </label>
           <input
             type="email"
@@ -91,14 +93,14 @@ const ContactForm = () => {
             onChange={handleInputChange}
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-            placeholder={t('contact.form.emailPlaceholder')}
+            placeholder="john@example.com"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
 
         <div>
           <label htmlFor="subject" className="block text-sm font-medium text-gray-900 mb-2">
-            {t('contact.form.subject')}
+            Subject
           </label>
           <input
             type="text"
@@ -108,14 +110,14 @@ const ContactForm = () => {
             onChange={handleInputChange}
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-            placeholder={t('contact.form.subjectPlaceholder')}
+            placeholder="Project Inquiry"
           />
           <ValidationError prefix="Subject" field="subject" errors={state.errors} />
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
-            {t('contact.form.message')}
+            Message
           </label>
           <textarea
             id="message"
@@ -125,7 +127,7 @@ const ContactForm = () => {
             rows={5}
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900 resize-none"
-            placeholder={t('contact.form.messagePlaceholder')}
+            placeholder="Tell me about your project..."
           ></textarea>
           <ValidationError prefix="Message" field="message" errors={state.errors} />
         </div>
@@ -140,8 +142,8 @@ const ContactForm = () => {
           } text-white`}
         >
           {state.submitting 
-            ? t('contact.form.sending', 'Envoi en cours...') 
-            : t('contact.form.submit')
+            ? 'Sending...' 
+            : 'Send Message'
           }
         </AnimatedButton>
       </form>
