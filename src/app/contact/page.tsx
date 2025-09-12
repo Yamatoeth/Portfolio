@@ -1,8 +1,8 @@
 'use client';
 
-import Layout from '../../../components/Layout';
-import ContactForm from '../../../components/ContactForm';
-import { FadeIn, SlideInLeft, Container } from '../../../components/animations';
+import Layout from '../components/Layout';
+import ContactForm from '../components/ContactForm';
+import { FadeIn, SlideInLeft, Container } from '../components/animations';
 
 export default function Contact() {
   return (

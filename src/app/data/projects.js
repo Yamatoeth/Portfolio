@@ -111,7 +111,20 @@ export const projects = [
     color: "from-purple-700 to-pink-500",
     logo: "FileScanner"
   },
-  
+  {
+  id: 9,
+    title: "Decentralized Guestbook",
+    description: "A smart contract in Solidity allowing visitors to leave a message and a donation directly on the blockchain. On Sepolia.",
+    image: "/images/projects/guestbook.png",
+    technologies: ["Solidity", "Ethereum", "Ethers.js", "Web3.js"],
+    githubUrl: "https://sepolia.etherscan.io/address/0x927122afba8b3ad7c2f16420a3daf7adbc8cb16",
+    liveUrl: "https://sepolia.etherscan.io/address/0x927122afba8b3ad7c2f16420a3daf7adbc8cb16b",
+    featured: true,
+    client: "Personal Project",
+    category: "Smart Contract",
+    color: "from-indigo-500 to-purple-600",
+    logo: "Smart Contract"
+  },
 
 
 ];

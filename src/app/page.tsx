@@ -1,10 +1,10 @@
 'use client';
 
-import Layout from '../../components/Layout';
-import MobileOptimizations from '../../components/MobileOptimizations';
-import FeaturedProjects from '../../components/FeaturedProjects';
-import TechTools from '../../components/TechTools';
-import { FadeIn, SlideInLeft, SlideInRight, Container, ListItem, AnimatedButton } from '../../components/animations';
+import Layout from './components/Layout';
+import MobileOptimizations from './components/MobileOptimizations';
+import FeaturedProjects from './components/FeaturedProjects';
+import TechTools from './components/TechTools';
+import { FadeIn, SlideInLeft, SlideInRight, Container, ListItem, AnimatedButton } from './components/animations';
 import Link from 'next/link';
 import Image from 'next/image';
 

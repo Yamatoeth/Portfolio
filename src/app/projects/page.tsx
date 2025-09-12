@@ -1,11 +1,11 @@
 'use client';
 
-import Layout from '../../../components/Layout';
-import ProjectCard from '../../../components/ProjectCard';
-import ProjectSearch from '../../../components/ProjectSearch';
+import Layout from '../components/Layout';
+import ProjectCard from '../components/ProjectCard';
+import ProjectSearch from '../components/ProjectSearch';
 
-import { FadeIn, Container, ListItem, AnimatedButton } from '../../../components/animations';
-import { projects } from '../../../data/projects';
+import { FadeIn, Container, ListItem, AnimatedButton } from '../components/animations';
+import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
 
 interface Project {

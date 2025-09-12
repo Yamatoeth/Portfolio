@@ -28,29 +28,13 @@ interface Project {
   etherscanUrl?: string;
 }
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  githubUrl: string;
-  liveUrl: string;
-  featured: boolean;
-  client: string;
-  category: string;
-  color?: string;
-  logo?: string;
-  etherscanUrl?: string;
-}
-
 export default function FeaturedProjects() {
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
   
   useEffect(() => {
     const loadProjects = async () => {
       try {
-        const projects = getFeaturedProjects();
+        const projects = getFeaturedProjects().slice(0, 6);
         setFeaturedProjects(projects);
       } catch (error) {
         console.error('Error loading projects:', error);
