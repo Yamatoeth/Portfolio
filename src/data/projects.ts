@@ -1,3 +1,4 @@
+
 import projectFilespy from '@/assets/project-filespy.png';
 import projectFolderly from '@/assets/project-folderly.png';
 import projectWF from '@/assets/project-wf.png';
@@ -14,10 +15,6 @@ import projectarbifever from '@/assets/project-arbifever.jpeg';
 import projectlendingapp from '@/assets/project-lendingapp.png';
 
 
-
-
-
-
 export interface Project {
   id: string;
   title: string;
@@ -30,7 +27,9 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+
   // Main Featured Projects
+  
   {
     id: 'Project-1',
     title: 'NFT Smart Contract',
@@ -59,10 +58,10 @@ export const projects: Project[] = [
     link: 'https://sepolia-lend-borrow-demo.vercel.app/',
     category: 'main',
     technologies: ['React', 'Typescript', 'Hardhat', 'Ethersjs'],
-    featured: true
   },
   
-  // Web3 Projects
+  // Web3 Projects // 
+
   {
     id: 'web3-1',
     title: 'ArbiFever',
@@ -92,6 +91,7 @@ export const projects: Project[] = [
   },
 
   // Classic / Non-Web3 Projects
+  
   {
     id: 'classic-1',
     title: 'WF Design Agency',
