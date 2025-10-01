@@ -58,6 +58,7 @@ export const projects: Project[] = [
     link: 'https://sepolia-lend-borrow-demo.vercel.app/',
     category: 'main',
     technologies: ['React', 'Typescript', 'Hardhat', 'Ethersjs'],
+    featured: true
   },
   
   // Web3 Projects // 
