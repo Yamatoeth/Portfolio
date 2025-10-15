@@ -13,6 +13,9 @@ import projectjuicewrldnft from '@/assets/project-juicewrldnft.png';
 import projectgenixishop from '@/assets/project-genixishop.png';
 import projectarbifever from '@/assets/project-arbifever.jpeg';
 import projectlendingapp from '@/assets/project-lendingapp.png';
+import projectSolStake from '@/assets/project-solstake.png';
+import projectNFTMarketplace from '@/assets/project-nftmarketplace.png';
+import projectERC4337 from '@/assets/project-erc4337.png';
 
 
 export interface Project {
@@ -20,7 +23,7 @@ export interface Project {
   title: string;
   description: string;
   image: string;
-  link: string;
+  link?: string;
   category: 'main' | 'web3' | 'ongoing' | 'classic';
   technologies: string[];
   featured?: boolean;
@@ -82,13 +85,37 @@ export const projects: Project[] = [
     technologies: ['React', 'Supabase', 'Solana', 'Helius API'],
   },
   {
-      id: 'web3-3',
-      title: 'MemeCoin Website',
-      description: 'Landing page and info site for a fun meme cryptocurrency project',
-      image: projectBonkFeast,
-      link: 'https://bonkfeast.fun/',
-      category: 'web3',
-      technologies: ['html', 'css', 'js',]
+    id: 'web3-3',
+    title: 'MemeCoin Website',
+    description: 'Landing page and info site for a fun meme cryptocurrency project',
+    image: projectBonkFeast,
+    link: 'https://bonkfeast.fun/',
+    category: 'web3',
+    technologies: ['html', 'css', 'js',]
+  },
+  {
+    id: 'web3-4',
+    title: 'ERC 4337 Account Abstraction Demo',
+    description: 'Demo of an ERC 4337 account abstraction on Sepolia Network',
+    image: projectERC4337,
+    category: 'web3',
+    technologies: ['hardhat', 'react', 'ethers.js', 'typescript']
+  },
+  {
+    id: 'web3-5',
+    title: 'SolStake',
+    description: 'Turn your SOL into yield with SolStake',
+    image: projectSolStake,
+    category: 'web3',
+    technologies: ['anchor', 'react', 'ethers.js', 'typescript']
+ },
+  {
+    id: 'web3-6',
+    title: 'Neon MarketPlace',
+    description: 'NFT MarketPlace for NFTs on Solana',
+    image: projectNFTMarketplace,
+    category: 'web3',
+    technologies: ['anchor', 'react', 'ethers.js', 'typescript']
   },
 
   // Classic / Non-Web3 Projects

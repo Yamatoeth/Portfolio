@@ -86,7 +86,7 @@ const Hero = () => {
           {/* Image Column */}
           <div className="order-1 lg:order-2 w-full lg:w-auto flex justify-center lg:justify-end">
             <img 
-              src="/pfpirl.jpg" 
+              src="/pfpirl.png" 
               alt="Profile photo"
               className="w-40 h-40 lg:w-[450px] lg:h-[450px] rounded-full border-4 border-card shadow-lg object-cover"
             />
