@@ -15,8 +15,8 @@ const Index = () => {
       <ThemeToggle />
       <FloatingCTA />
       <Hero />
-      <About />
       <Projects />
+      <About />
       <Experience />
       <OngoingProjects />
       <Contact />

@@ -34,7 +34,7 @@ export const projects: Project[] = [
   // Main Featured Projects
   
   {
-    id: 'Project-1',
+    id: 'Project-2',
     title: 'NFT Smart Contract',
     description: 'ERC 1155 NFT Minting Dapp on Sepolia Network',
     image: projectjuicewrldnft,
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 'project-2',
+    id: 'project-3',
     title: 'ERC20 Token with Staking Interface',
     description: 'ERC20 custom contract built with Remix IDE and deployed on Sepolia Network',
     image: projectwrldtokendapp,
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: 'project-3',
+    id: 'project-1',
     title: 'Sepolia Lending/Borrowing Dapp Demo',
     description: 'Demo of a lending/borrowing dapp on Sepolia Network',
     image: projectlendingapp,
