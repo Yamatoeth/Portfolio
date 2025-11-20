@@ -16,6 +16,7 @@ import projectlendingapp from '@/assets/project-lendingapp.png';
 import projectSolStake from '@/assets/project-solstake.png';
 import projectNFTMarketplace from '@/assets/project-nftmarketplace.png';
 import projectERC4337 from '@/assets/project-erc4337.png';
+import projectteclis from '@/assets/project-teclis.png'
 
 
 export interface Project {
@@ -122,12 +123,22 @@ export const projects: Project[] = [
   
   {
     id: 'classic-1',
+    title: 'Teclis Scientifique',
+    description: 'Website for a Leading manufacturer of cutting-edge scientific instruments.',
+    image: projectteclis, // tu peux ajouter une image dédiée
+    link: 'https://teclis-nexus-rpogyztzc-yamatos-projects-1cef799c.vercel.app/',
+    category: 'classic',
+    technologies: ['Nextjs', 'TailwindCSS', 'TypeScript', 'React'],
+    featured: false
+  },
+  {
+    id: 'classic-6',
     title: 'WF Design Agency',
     description: 'showcase of a design agency website built with React and TailwindCSS',
     image: projectWF, // tu peux ajouter une image dédiée
     link: 'https://yamatoeth.github.io/WF/',
     category: 'classic',
-    technologies: ['React', 'TailwindCSS', 'TypeScript', 'TailwindCSS'],
+    technologies: ['React', 'TailwindCSS', 'TypeScript', ],
     featured: false
   },
   {
