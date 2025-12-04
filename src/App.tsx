@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AllProjects from "./pages/AllProjects";
 import NotFound from "./pages/NotFound";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    <SpeedInsights/>
   </QueryClientProvider>
 );
 
