@@ -16,6 +16,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <SpeedInsights/>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<AllProjects />} />
@@ -24,7 +25,6 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
-    <SpeedInsights/>
   </QueryClientProvider>
 );
 
