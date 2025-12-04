@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import AllProjects from "./pages/AllProjects";
 import NotFound from "./pages/NotFound";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react"
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <SpeedInsights/>
+        <Analytics/>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<AllProjects />} />
