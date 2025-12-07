@@ -17,6 +17,7 @@ import projectSolStake from '@/assets/project-solstake.png';
 import projectNFTMarketplace from '@/assets/project-nftmarketplace.png';
 import projectERC4337 from '@/assets/project-erc4337.png';
 import projectteclis from '@/assets/project-teclis.png'
+import projectmamamouchou from '@/assets/project-mamamouchou.png'
 
 
 export interface Project {
@@ -125,8 +126,8 @@ export const projects: Project[] = [
     id: 'classic-1',
     title: 'Teclis Scientifique',
     description: 'Website for a Leading manufacturer of cutting-edge scientific instruments.',
-    image: projectteclis, // tu peux ajouter une image dédiée
-    link: 'https://teclis-nexus-rpogyztzc-yamatos-projects-1cef799c.vercel.app/',
+    image: projectteclis, 
+    link: 'https://teclis-nexus.vercel.app/',
     category: 'classic',
     technologies: ['Nextjs', 'TailwindCSS', 'TypeScript', 'React'],
     featured: false
@@ -135,7 +136,7 @@ export const projects: Project[] = [
     id: 'classic-6',
     title: 'WF Design Agency',
     description: 'showcase of a design agency website built with React and TailwindCSS',
-    image: projectWF, // tu peux ajouter une image dédiée
+    image: projectWF, 
     link: 'https://yamatoeth.github.io/WF/',
     category: 'classic',
     technologies: ['React', 'TailwindCSS', 'TypeScript', ],
@@ -176,6 +177,15 @@ export const projects: Project[] = [
     link: 'https://genixi.store/products/whitening-strips',
     category: 'classic',
     technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads']
+  },
+  {
+    id: 'classic-6',
+    title: 'Mamamouchou',
+    description: 'Designed and Developed a shopify store for a client. Was in charge of visual creation, Ads Management, website optimisation, shopify maintenance and updates.',
+    image: projectmamamouchou,
+    link: 'https://mamamouchou.com/',
+    category: 'classic',
+    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
   },
 
   // Ongoing Projects

@@ -1,45 +1,56 @@
-import { Code, Database, Globe, Palette, Rocket, Shield } from 'lucide-react';
+import { useRef } from 'react';
+
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import KnowledgeGraph from './KnowledgeGraph';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const skills = [
-    {
-      icon: Globe,
-      title: 'User-Centric Front-End',
-      description: 'Designs interfaces that are intuitive and enjoyable for users, focusing on accessibility and performance.'
-    },
-    {
-      icon: Database,
-      title: 'Scalable Back-End',
-      description: 'Builds robust server architectures that grow with your business and handle millions of requests.'
-    },
-    {
-      icon: Shield,
-      title: 'Blockchain Security',
-      description: 'Implements smart contracts with military-grade security practices and comprehensive audit protocols.'
-    },
-    {
-      icon: Code,
-      title: 'Modern Tech Stack',
-      description: 'Leverages cutting-edge frameworks and tools to deliver future-proof solutions that stand the test of time.'
-    },
-    {
-      icon: Rocket,
-      title: 'Performance Optimization',
-      description: 'Ensures lightning-fast load times and smooth interactions that keep users engaged and satisfied.'
-    },
-    {
-      icon: Palette,
-      title: 'Creative Problem Solving',
-      description: 'Transforms complex challenges into elegant solutions through innovative thinking and technical expertise.'
-    }
-  ];
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  useGSAP(() => {
+    // Animate Header
+    gsap.fromTo('.about-header-animate',
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.about-header-animate',
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+
+    // Animate Stats
+    gsap.fromTo('.stat-card-animate',
+      { scale: 0.8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+        scrollTrigger: {
+          trigger: '.stats-grid-animate',
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  }, { scope: containerRef });
 
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-20 px-6" ref={containerRef}>
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 about-header-animate">
             <h2 className="text-section-title text-gradient mb-6">
               About Me
             </h2>
@@ -51,41 +62,21 @@ const About = () => {
             </p>
           </div>
 
-          {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skill, index) => {
-              const Icon = skill.icon;
-              return (
-                <div 
-                  key={skill.title}
-                  className="card-premium group hover-glow"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="p-3 rounded-xl bg-gradient-primary mr-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <h3 className="text-card-title">{skill.title}</h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {skill.description}
-                  </p>
-                </div>
-              );
-            })}
+          {/* Skills Graph */}
+          <div className="mb-20 skills-grid-animate">
+            <KnowledgeGraph />
           </div>
 
           {/* Stats Section */}
-          <div className="mt-20 grid grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-20 grid grid-cols-2 lg:grid-cols-3 gap-8 stats-grid-animate">
             {[
               { number: '10+', label: 'Projects Completed' },
               { number: '3+', label: 'Years Experience' },
               { number: '10+', label: 'Technologies Mastered' },
-            ].map((stat, index) => (
+            ].map((stat) => (
               <div 
                 key={stat.label}
-                className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:bg-card transition-all duration-300 hover:scale-105"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:bg-card transition-all duration-300 hover:scale-105 stat-card-animate"
               >
                 <div className="text-3xl lg:text-4xl font-display font-bold text-gradient mb-2">
                   {stat.number}

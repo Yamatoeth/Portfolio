@@ -4,12 +4,18 @@ import { Button } from '@/components/ui/button';
 import ProjectCard from './ProjectCard';
 import { getFeaturedProjects } from '@/data/projects';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const featuredProjects = getFeaturedProjects();
 
   useEffect(() => {
@@ -21,6 +27,26 @@ const Projects = () => {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useGSAP(() => {
+    if (!isMobile) {
+      const cards = gsap.utils.toArray('.project-card-animate');
+      cards.forEach((card: any, index) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top bottom-=100',
+            toggleActions: 'play none none reverse',
+          },
+          y: 50,
+          opacity: 0,
+          duration: 0.6,
+          delay: index * 0.1,
+          ease: 'power3.out',
+        });
+      });
+    }
+  }, { scope: containerRef, dependencies: [isMobile] });
 
   const nextSlide = () => {
     setCurrentIndex((prev) => 
@@ -59,7 +85,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-6 bg-muted/30">
+    <section id="projects" className="py-20 px-6 bg-muted/30" ref={containerRef}>
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

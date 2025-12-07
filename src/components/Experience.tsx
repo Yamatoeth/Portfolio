@@ -1,12 +1,35 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Calendar, MapPin } from 'lucide-react';
 import { experiences } from '@/data/experience';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const items = gsap.utils.toArray('.experience-item-animate');
+    items.forEach((item: any) => {
+      gsap.from(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: 'top bottom-=100',
+          toggleActions: 'play none none reverse',
+        },
+        x: item.classList.contains('md:flex-row') ? -50 : 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+      });
+    });
+  }, { scope: containerRef });
 
   return (
-    <section id="experience" className="py-20 px-6">
+    <section id="experience" className="py-20 px-6" ref={containerRef}>
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -29,10 +52,9 @@ const Experience = () => {
               {experiences.map((exp, index) => (
                 <div 
                   key={exp.id}
-                  className={`relative flex items-center ${
+                  className={`relative flex items-center experience-item-animate ${
                     index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } animate-fade-in`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
+                  }`}
                   onMouseEnter={() => setHoveredId(exp.id)}
                   onMouseLeave={() => setHoveredId(null)}
                 >

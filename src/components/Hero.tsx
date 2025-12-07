@@ -1,7 +1,20 @@
+import { useRef } from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import React from 'react';
+
+const Hero3D = React.lazy(() => import('./Hero3D'));
 
 const Hero = () => {
+  const containerRef = useRef(null);
+  const textRef = useRef(null);
+  const buttonsRef = useRef(null);
+  const socialRef = useRef(null);
+  const imageRef = useRef(null);
+  const arrowRef = useRef(null);
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -10,13 +23,52 @@ const Hero = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    tl.from(textRef.current.children, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+    })
+    .from(buttonsRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+    }, '-=0.5')
+    .from(socialRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+    }, '-=0.6')
+    .from(imageRef.current, {
+      x: 50,
+      opacity: 0,
+      duration: 1,
+    }, '-=1')
+    .from(arrowRef.current, {
+      y: -20,
+      opacity: 0,
+      duration: 1,
+      onComplete: () => {
+        gsap.to(arrowRef.current, {
+          y: 10,
+          repeat: -1,
+          yoyo: true,
+          duration: 1.5,
+          ease: 'power1.inOut'
+        });
+      }
+    }, '-=0.5');
+
+  }, { scope: containerRef });
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero">
+    <section ref={containerRef} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-glow/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl animate-glow"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Hero3D />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -25,7 +77,7 @@ const Hero = () => {
           {/* Text Column */}
           <div className="order-2 lg:order-1 w-full lg:w-1/2 text-center lg:text-left">
             {/* Main Hero Content */}
-            <div className="animate-fade-in">
+            <div ref={textRef}>
               <h1 className="text-hero text-gradient mb-6">
                 Simon
               </h1>
@@ -39,7 +91,7 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
               <Button 
                 onClick={scrollToProjects}
                 className="btn-hero group"
@@ -57,7 +109,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div ref={socialRef} className="flex justify-center lg:justify-start space-x-6">
               <a 
                 href="https://github.com/yamatoeth" 
                 target="_blank" 

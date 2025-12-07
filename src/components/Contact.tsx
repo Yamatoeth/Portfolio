@@ -205,33 +205,6 @@ const Contact = () => {
                   })}
                 </div>
               </div>
-
-              {/* Call-to-Action */}
-              <div className="card-premium bg-gradient-primary text-primary-foreground border-primary/20">
-                <h3 className="text-xl font-display font-semibold mb-4">
-                  Ready to Start Your Project?
-                </h3>
-                <p className="text-primary-foreground/90 mb-6 leading-relaxed">
-                  Let's transform your ideas into reality with modern technology 
-                  and innovative solutions that drive results.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button 
-                    variant="outline" 
-                    className="bg-primary-foreground text-primary border-primary-foreground hover:bg-primary-foreground/90"
-                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    View Portfolio
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    className="bg-transparent text-primary-foreground border-primary-foreground/50 hover:bg-primary-foreground/10"
-                    onClick={() => window.open('https://calendly.com/simon', '_blank')}
-                  >
-                    Schedule Call
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
