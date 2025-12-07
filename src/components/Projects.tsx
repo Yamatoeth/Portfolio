@@ -82,6 +82,9 @@ const Projects = () => {
 
   const goToAllProjects = () => {
     navigate('/projects');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 0);
   };
 
   return (
