@@ -73,7 +73,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Responsive layout: mobile column (image above text), desktop row (text left, image right) */}
-        <div className="max-w-5xl mx-auto flex flex-col gap-4 lg:flex-row items-center justify-between gap-10">
+        <div className="max-w-5xl mx-auto flex flex-col gap-4 lg:flex-row items-center justify-between ">
           {/* Text Column */}
           <div className="order-2 lg:order-1 w-full lg:w-1/2 text-center lg:text-left">
             {/* Main Hero Content */}
