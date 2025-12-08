@@ -10,28 +10,26 @@ As a strong Web3 enjoyer, i started my journey with Ethereum and Solidity. I ful
 Vite
 React
 TypeScript
-React Router
-TanStack Query
-shadcn/ui
 Tailwind CSS
-Vercel Speed Insights
+Three.js
+GASP
+d3.js
 
 # Additional Capabilities
 
 Covers tools and domains not showcased in the portfolio but fully operational in practice: 
 i18n systems, 
 Shopify integration, 
-next-intl usage, 
+Next-intl usage, 
 Supabase workflows, 
 Drizzle ORM, 
 Oauth systems,
 Captcha Integration,
-Forms,
-form systems,
+Form systems,
 REST API integration, 
 database design, 
 SQL usage,
-authentication flows, 
-state handling, 
-schema management, 
-deployment pipelines
+Authentication flows, 
+State handling, 
+Schema management, 
+Deployment pipelines
