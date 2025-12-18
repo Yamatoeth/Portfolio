@@ -18,6 +18,7 @@ import projectNFTMarketplace from '@/assets/project-nftmarketplace.png';
 import projectERC4337 from '@/assets/project-erc4337.png';
 import projectteclis from '@/assets/project-teclis.png'
 import projectmamamouchou from '@/assets/project-mamamouchou.png'
+import projectkalissea from '@/assets/project-kalissea.png'
 
 
 export interface Project {
@@ -184,6 +185,15 @@ export const projects: Project[] = [
     description: 'Designed and Developed a shopify store for a client. Was in charge of visual creation, Ads Management, website optimisation, shopify maintenance and updates.',
     image: projectmamamouchou,
     link: 'https://mamamouchou.com/',
+    category: 'classic',
+    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
+  },
+  {
+    id: 'classic-7',
+    title: 'Kalissea',
+    description: 'Designed and Developed a shopify store for a client. Was in charge of visual creation, Ads Management, website optimisation, shopify maintenance and updates.',
+    image: projectkalissea,
+    link: 'https://kalissea.com/',
     category: 'classic',
     technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
   },
