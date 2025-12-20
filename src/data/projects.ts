@@ -7,7 +7,6 @@ import projectSolwatcher from '@/assets/project-solwatcher.png';
 import projectGLC from '@/assets/project-glc.png';
 import projectCoupalConstruction from '@/assets/project-coupal-construction.png';
 import projectBonkFeast from '@/assets/project-bonkfeast.png';
-import projectTeclisScientifique from '@/assets/project-teclis-scientifique.png';
 import projectwrldtokendapp from '@/assets/project-wrldtokendapp.png';
 import projectjuicewrldnft from '@/assets/project-juicewrldnft.png';
 import projectgenixishop from '@/assets/project-genixishop.png';
@@ -27,7 +26,7 @@ export interface Project {
   description: string;
   image: string;
   link?: string;
-  category: 'main' | 'web3' | 'ongoing' | 'classic';
+  category: 'main' | 'web3' | 'ongoing' | 'classic'| 'shopify'| 'landing page'| 'full-stack website';
   technologies: string[];
   featured?: boolean;
 }
@@ -44,7 +43,7 @@ export const projects: Project[] = [
     link: 'https://juice-wrld-nft.vercel.app/',
     category: 'main',
     technologies: ['React', 'ThirdWeb SDK', 'Solidity', 'TypeScript'],
-    featured: true
+    featured: false
   },
   {
     id: 'project-3',
@@ -125,13 +124,13 @@ export const projects: Project[] = [
   
   {
     id: 'classic-1',
-    title: 'Teclis Scientifique',
+    title: 'Teclis Scientific',
     description: 'Website for a Leading manufacturer of cutting-edge scientific instruments.',
     image: projectteclis, 
-    link: 'https://teclis-nexus.vercel.app/',
-    category: 'classic',
-    technologies: ['Nextjs', 'TailwindCSS', 'TypeScript', 'React'],
-    featured: false
+    link: 'https://teclis-nextjs.vercel.app/en',
+    category: 'full-stack website',
+    technologies: ['Nextjs', 'TailwindCSS', 'TypeScript', 'React', 'Vercel', 'Sanity CMS', 'REST API', 'SEO', 'Multilanguage'],
+    featured: true
   },
   {
     id: 'classic-6',
@@ -139,7 +138,7 @@ export const projects: Project[] = [
     description: 'showcase of a design agency website built with React and TailwindCSS',
     image: projectWF, 
     link: 'https://yamatoeth.github.io/WF/',
-    category: 'classic',
+    category: 'landing page',
     technologies: ['React', 'TailwindCSS', 'TypeScript', ],
     featured: false
   },
@@ -149,7 +148,7 @@ export const projects: Project[] = [
     description: 'Web platform for accounting firm with client management and professional services. Modern and secure interface.',
     image: projectBurkett,
     link: 'https://yamatoeth.github.io/Burkett-Co',
-    category: 'classic',
+    category: 'landing page',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express']
   },
   {
@@ -158,7 +157,7 @@ export const projects: Project[] = [
     description: 'Website for technology solutions company with service presentation and portfolio showcase.',
     image: projectGLC,
     link: 'https://yamatoeth.github.io/GlcSolutions',
-    category: 'classic',
+    category: 'landing page',
     technologies: ['Next.js', 'TailwindCSS', 'TypeScript', 'Vercel'],
   },
   {
@@ -167,7 +166,7 @@ export const projects: Project[] = [
     description: 'Showcase website for construction company with project gallery and online quote form.',
     image: projectCoupalConstruction,
     link: 'https://yamatoeth.github.io/CoupalConstruction',
-    category: 'classic',
+    category: 'landing page',
     technologies: ['React', 'Bootstrap', 'JavaScript', 'Netlify'],
   },
   {
@@ -176,7 +175,7 @@ export const projects: Project[] = [
     description: 'Ecommerce platform for a retail business with product catalog, shopping cart, and payment integration.',
     image: projectgenixishop,
     link: 'https://genixi.store/products/whitening-strips',
-    category: 'classic',
+    category: 'shopify',
     technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads']
   },
   {
@@ -185,7 +184,7 @@ export const projects: Project[] = [
     description: 'Designed and Developed a shopify store for a client. Was in charge of visual creation, Ads Management, website optimisation, shopify maintenance and updates.',
     image: projectmamamouchou,
     link: 'https://mamamouchou.com/',
-    category: 'classic',
+    category: 'shopify',
     technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
   },
   {
@@ -194,7 +193,7 @@ export const projects: Project[] = [
     description: 'Designed and Developed a shopify store for a client. Was in charge of visual creation, Ads Management, website optimisation, shopify maintenance and updates.',
     image: projectkalissea,
     link: 'https://kalissea.com/',
-    category: 'classic',
+    category: 'shopify',
     technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
   },
 
@@ -217,15 +216,6 @@ export const projects: Project[] = [
     category: 'ongoing',
     technologies: ['React', 'Node.js', 'AI/ML', 'python']
   }
-  //{
-  // id: 'ongoing-3',
-  //  title: 'Teclis Scientifique',
-  //  description: 'Website for a scientific equipment company with product catalog and inquiry form. Revamp from Wix to React.',
-  //  image: projectTeclisScientifique,
-  //  link: 'https://example.com',
-  //  category: 'ongoing',
-  //  technologies: ['React', 'Next.js', 'TailwindCSS', 'TypeScript']
-  //},
 ];
 
 export const getProjectsByCategory = (category: Project['category']) => {
