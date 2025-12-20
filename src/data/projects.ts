@@ -10,7 +10,6 @@ import projectBonkFeast from '@/assets/project-bonkfeast.png';
 import projectwrldtokendapp from '@/assets/project-wrldtokendapp.png';
 import projectjuicewrldnft from '@/assets/project-juicewrldnft.png';
 import projectgenixishop from '@/assets/project-genixishop.png';
-import projectarbifever from '@/assets/project-arbifever.jpeg';
 import projectlendingapp from '@/assets/project-lendingapp.png';
 import projectSolStake from '@/assets/project-solstake.png';
 import projectNFTMarketplace from '@/assets/project-nftmarketplace.png';
@@ -18,6 +17,7 @@ import projectERC4337 from '@/assets/project-erc4337.png';
 import projectteclis from '@/assets/project-teclis.png'
 import projectmamamouchou from '@/assets/project-mamamouchou.png'
 import projectkalissea from '@/assets/project-kalissea.png'
+import projectUpArena from '@/assets/project-uparena.png'
 
 
 export interface Project {
@@ -69,15 +69,6 @@ export const projects: Project[] = [
   // Web3 Projects // 
 
   {
-    id: 'web3-1',
-    title: 'ArbiFever',
-    description: 'Infection Token on Arbitrum, presale, burn, staking functions',
-    image: projectarbifever,
-    link: 'https://x.com/ArbiFever',
-    category: 'web3',
-    technologies: ['React', 'Smart Contracts', 'TypeScript']
-  },
-  {
     id: 'web3-2',
     title: 'SolWatcher',
     description: 'Solana dashboard to track wallet balance, tokens held, and recent transactions. Uses the Helius API for on-chain data and Supabase for storage.',
@@ -88,7 +79,7 @@ export const projects: Project[] = [
   },
   {
     id: 'web3-3',
-    title: 'MemeCoin Website',
+    title: 'BonkFeast',
     description: 'Landing page and info site for a fun meme cryptocurrency project',
     image: projectBonkFeast,
     link: 'https://bonkfeast.fun/',
@@ -198,23 +189,32 @@ export const projects: Project[] = [
   },
 
   // Ongoing Projects
+  // {
+  //   id: 'ongoing-1',
+  //   title: 'FileSpy',
+  //   description: 'Advanced file analysis tool with AI-powered insights',
+  //   image: projectFilespy,
+  //   link: 'https://file-spy.vercel.app/',
+  //   category: 'ongoing',
+  //   technologies: ['Electron', 'React', 'Python', 'Machine Learning']
+  // },
+  // {
+  //   id: 'ongoing-2',
+  //   title: 'Folderly',
+  //   description: 'Intelligent folder organization system with automated categorization',
+  //   image: projectFolderly,
+  //   link: 'https://tidy-file-lab.vercel.app/',
+  //   category: 'ongoing',
+  //   technologies: ['React', 'Node.js', 'AI/ML', 'python']
+  // },
   {
-    id: 'ongoing-1',
-    title: 'FileSpy',
-    description: 'Advanced file analysis tool with AI-powered insights',
-    image: projectFilespy,
-    link: 'https://file-spy.vercel.app/',
-    category: 'ongoing',
-    technologies: ['Electron', 'React', 'Python', 'Machine Learning']
-  },
-  {
-    id: 'ongoing-2',
-    title: 'Folderly',
-    description: 'Intelligent folder organization system with automated categorization',
-    image: projectFolderly,
-    link: 'https://tidy-file-lab.vercel.app/',
-    category: 'ongoing',
-    technologies: ['React', 'Node.js', 'AI/ML', 'python']
+    id: 'ongoing-3',
+    title: 'UpArena',
+    description: 'Platform unifying streaming and prediction, where users can predicts the outcome of game streams and earn rewards.',
+    image: projectUpArena,
+    link: 'https://www.uparena.io/',
+    category: 'web3',
+    technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ]
   }
 ];
 
