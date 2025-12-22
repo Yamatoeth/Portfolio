@@ -9,7 +9,7 @@ const FloatingCTA = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const showAt = window.innerHeight * 0.5; // Show after scrolling 50% of viewport
+      const showAt = window.innerHeight * 0.5; 
       setIsVisible(scrollY > showAt);
     };
 

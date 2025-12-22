@@ -10,14 +10,14 @@ const OngoingProjects = () => {
   const gridClasses = ongoingProjects.length === 1 ? 'grid grid-cols-1 justify-center gap-8 mb-12' : 'grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12';
 
   return (
-    <section id="ongoing" className="py-20 px-6">
+    <section id="ongoing" className="py-5 px-6">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <Sparkles className="h-6 w-6 text-primary animate-pulse" />
-              <h2 className="text-section-title text-gradient">
+             <Sparkles className="h-6 w-6 text-primary animate-pulse" />
+              <h2 className="text-section-title text-gradient leading-normal pb-1">
                 Ongoing Projects
               </h2>
               <Sparkles className="h-6 w-6 text-primary animate-pulse" />
@@ -123,28 +123,7 @@ const OngoingProjects = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Coming Soon Teaser */}
-          <div className="text-center p-8 rounded-xl bg-gradient-hero border border-border">
-            <div className="max-w-2xl mx-auto">
-              <h3 className="text-2xl font-display font-semibold text-gradient mb-4">
-                More Exciting Projects Coming Soon
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                I'm constantly working on new innovations. Follow my journey to be the first 
-                to know about upcoming releases and beta access opportunities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="btn-hero">
-                  Get Notified
-                </Button>
-                <Button variant="outline" className="btn-secondary">
-                  View Roadmap
-                </Button>
-              </div>
-            </div>
-          </div>
+          </div> 
         </div>
       </div>
     </section>

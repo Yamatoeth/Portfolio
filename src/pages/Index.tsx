@@ -8,6 +8,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 import FloatingCTA from '@/components/FloatingCTA';
+import Services from '@/components/Services';
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <Hero />
       <Projects />
       <About />
+      <Services />
       <Experience />
       <OngoingProjects />
       <Contact />
