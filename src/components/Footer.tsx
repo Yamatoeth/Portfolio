@@ -91,6 +91,15 @@ const Footer = () => {
                 >
                   Let's Work Together
                 </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="btn-secondary"
+                >
+                  <a href="/resume.pdf" download>
+                  Download Resume
+                  </a>
+                </Button>
               </div>
             </div>
           </div>

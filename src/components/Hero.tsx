@@ -82,7 +82,7 @@ const Hero = () => {
                 Simon
               </h1>
               <p className="text-2xl lg:text-3xl font-display font-medium text-muted-foreground mb-4">
-                Web3 & Full-Stack Developer
+                Full-Stack Developer & Web3 Programmer
               </p>
               <p className="text-lg lg:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
                 Crafting innovative digital experiences that bridge traditional web development 
@@ -105,6 +105,15 @@ const Hero = () => {
                 className="btn-secondary"
               >
                 Let's Connect
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="btn-secondary"
+              >
+                <a href="/resume.pdf" download>
+                  Download Resume
+                </a>
               </Button>
             </div>
 

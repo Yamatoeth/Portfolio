@@ -7,6 +7,8 @@ const OngoingProjects = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const ongoingProjects = getProjectsByCategory('ongoing');
 
+  const gridClasses = ongoingProjects.length === 1 ? 'grid grid-cols-1 justify-center gap-8 mb-12' : 'grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12';
+
   return (
     <section id="ongoing" className="py-20 px-6">
       <div className="container mx-auto">
@@ -27,7 +29,7 @@ const OngoingProjects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div className={gridClasses}>
             {ongoingProjects.map((project, index) => (
               <div 
                 key={project.id}
@@ -55,7 +57,7 @@ const OngoingProjects = () => {
                 )}
 
                 {/* Project Image */}
-                <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+                <div className="relative aspect-[4/3] w-full mb-6 rounded-lg overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -68,13 +70,13 @@ const OngoingProjects = () => {
                     <div className="bg-card/80 backdrop-blur-sm rounded-lg p-3 border border-border/50">
                       <div className="flex justify-between items-center text-xs text-muted-foreground mb-2">
                         <span>Progress</span>
-                        <span>{project.id === 'ongoing-1' ? '75%' : '60%'}</span>
+                        <span>{project.id === 'ongoing-1' ? '75%' : '70%'}</span>
                       </div>
                       <div className="w-full bg-muted rounded-full h-2">
                         <div 
                           className="bg-gradient-primary h-2 rounded-full transition-all duration-1000 ease-out"
                           style={{ 
-                            width: project.id === 'ongoing-1' ? '75%' : '60%',
+                            width: project.id === 'ongoing-1' ? '75%' : '70%',
                             animationDelay: `${index * 0.5}s`
                           }}
                         ></div>

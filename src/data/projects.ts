@@ -213,7 +213,7 @@ export const projects: Project[] = [
     description: 'Platform unifying streaming and prediction, where users can predicts the outcome of game streams and earn rewards.',
     image: projectUpArena,
     link: 'https://www.uparena.io/',
-    category: 'web3',
+    category: 'ongoing',
     technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ]
   }
 ];

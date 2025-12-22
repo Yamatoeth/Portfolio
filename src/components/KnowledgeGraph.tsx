@@ -140,7 +140,7 @@ const KnowledgeGraph = () => {
       .data(data.links)
       .enter().append("line")
       .attr("stroke", "#ffffff")
-      .attr("stroke-opacity", 0.2)
+      .attr("stroke-opacity", 0.4)
       .attr("stroke-width", d => Math.sqrt(d.value));
 
     // Nodes Group
@@ -153,15 +153,6 @@ const KnowledgeGraph = () => {
         .on("start", dragstarted)
         .on("drag", dragged)
         .on("end", dragended));
-
-    // Node Circles
-    nodeGroup.append("circle")
-      .attr("r", d => d.radius)
-      .attr("fill", d => `url(#grad-${d.group})`)
-      .attr("stroke", "#ffffff")
-      .attr("stroke-width", 1.5)
-      .attr("stroke-opacity", 0.8)
-      .style("cursor", "pointer");
 
     // Gradients for stylish look
     const defs = svg.append("defs");
@@ -192,25 +183,126 @@ const KnowledgeGraph = () => {
         .attr("stop-opacity", 0.6);
     });
 
+    // Node Circles
+    const circles = nodeGroup.append("circle")
+      .attr("r", d => d.radius)
+      .attr("fill", d => `url(#grad-${d.group})`)
+      .attr("stroke", "#ffffff")
+      .attr("stroke-width", 1.5)
+      .attr("stroke-opacity", 0.8)
+      .style("cursor", "pointer")
+      .style("filter", "drop-shadow(0 2px 2px rgba(0,0,0,0.4))")
+      .style("transition", "all 0.3s ease");
+
     // Node Labels
-    nodeGroup.append("text")
+    const labels = nodeGroup.append("text")
       .text(d => d.id)
       .attr("x", 0)
       .attr("y", d => d.radius + 15)
       .attr("text-anchor", "middle")
       .attr("fill", "white")
-      .attr("font-size", "12px")
+      .attr("font-size", d => `${Math.min(14, Math.max(10, d.radius / 2.5))}px`)
       .attr("font-weight", "500")
       .style("pointer-events", "none")
-      .style("text-shadow", "0 2px 4px rgba(0,0,0,0.5)");
+      .style("text-shadow", "0 3px 6px rgba(0,0,0,0.8)");
+
+    // Hover effects
+    nodeGroup.on("mouseenter", function(event, d) {
+      // Enlarge circle and change stroke
+      d3.select(this).select("circle")
+        .transition()
+        .duration(200)
+        .attr("r", d.radius * 1.3)
+        .attr("stroke", "#facc15") // Yellow stroke on hover
+        .attr("stroke-width", 3)
+        .attr("stroke-opacity", 1)
+        .style("filter", "drop-shadow(0 4px 6px rgba(250, 204, 21, 0.7))");
+
+      // Increase label font size slightly
+      d3.select(this).select("text")
+        .transition()
+        .duration(200)
+        .attr("font-size", `${Math.min(18, Math.max(12, d.radius / 2))}px`)
+        .style("text-shadow", "0 4px 8px rgba(0,0,0,1)");
+
+      // Highlight connected links
+      link
+        .filter(l => l.source === d || l.target === d)
+        .transition()
+        .duration(200)
+        .attr("stroke-opacity", 0.8)
+        .attr("stroke-width", d => Math.sqrt(d.value) * 2);
+    })
+    .on("mouseleave", function(event, d) {
+      // Reset circle
+      d3.select(this).select("circle")
+        .transition()
+        .duration(200)
+        .attr("r", d.radius)
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 1.5)
+        .attr("stroke-opacity", 0.8)
+        .style("filter", "drop-shadow(0 2px 2px rgba(0,0,0,0.4))");
+
+      // Reset label
+      d3.select(this).select("text")
+        .transition()
+        .duration(200)
+        .attr("font-size", `${Math.min(14, Math.max(10, d.radius / 2.5))}px`)
+        .style("text-shadow", "0 3px 6px rgba(0,0,0,0.8)");
+
+      // Reset links
+      link
+        .filter(l => l.source === d || l.target === d)
+        .transition()
+        .duration(200)
+        .attr("stroke-opacity", 0.4)
+        .attr("stroke-width", d => Math.sqrt(d.value));
+    });
 
     // Simulation Tick
     simulation.on("tick", () => {
       link
-        .attr("x1", d => (d.source as Node).x = Math.max((d.source as Node).radius, Math.min(width - (d.source as Node).radius, (d.source as Node).x!)))
-        .attr("y1", d => (d.source as Node).y = Math.max((d.source as Node).radius, Math.min(height - (d.source as Node).radius - 20, (d.source as Node).y!)))
-        .attr("x2", d => (d.target as Node).x = Math.max((d.target as Node).radius, Math.min(width - (d.target as Node).radius, (d.target as Node).x!)))
-        .attr("y2", d => (d.target as Node).y = Math.max((d.target as Node).radius, Math.min(height - (d.target as Node).radius - 20, (d.target as Node).y!)));
+        .attr("x1", d => {
+          const source = d.source as Node;
+          const target = d.target as Node;
+          const dx = (target.x ?? 0) - (source.x ?? 0);
+          const dy = (target.y ?? 0) - (source.y ?? 0);
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist === 0) return source.x ?? 0;
+          const offsetX = (dx / dist) * source.radius;
+          return (source.x ?? 0) + offsetX;
+        })
+        .attr("y1", d => {
+          const source = d.source as Node;
+          const target = d.target as Node;
+          const dx = (target.x ?? 0) - (source.x ?? 0);
+          const dy = (target.y ?? 0) - (source.y ?? 0);
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist === 0) return source.y ?? 0;
+          const offsetY = (dy / dist) * source.radius;
+          return (source.y ?? 0) + offsetY;
+        })
+        .attr("x2", d => {
+          const source = d.source as Node;
+          const target = d.target as Node;
+          const dx = (source.x ?? 0) - (target.x ?? 0);
+          const dy = (source.y ?? 0) - (target.y ?? 0);
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist === 0) return target.x ?? 0;
+          const offsetX = (dx / dist) * target.radius;
+          return (target.x ?? 0) + offsetX;
+        })
+        .attr("y2", d => {
+          const source = d.source as Node;
+          const target = d.target as Node;
+          const dx = (source.x ?? 0) - (target.x ?? 0);
+          const dy = (source.y ?? 0) - (target.y ?? 0);
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist === 0) return target.y ?? 0;
+          const offsetY = (dy / dist) * target.radius;
+          return (target.y ?? 0) + offsetY;
+        });
 
       nodeGroup
         .attr("transform", d => {

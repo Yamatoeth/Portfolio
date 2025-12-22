@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, CheckCircle, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { Send, CheckCircle, Github, Linkedin, Mail, MessageCircle, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -73,10 +73,17 @@ const Contact = () => {
       href: 'https://github.com/yamatoeth',
       color: 'hover:text-gray-600'
     },
+     {
+      icon: Twitter,
+      label: 'Twitter',
+      value: '@Yamatoeth',
+      href: 'https://twitter.com/Yamatoeth',
+      color: 'hover:text-blue-400'
+    },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: '/in/simon',
+      value: '/in/simon-lechevalier-5ba743198',
       href: 'https://linkedin.com/in/simon-lechevalier-5ba743198',
       color: 'hover:text-blue-600'
     },
@@ -84,7 +91,7 @@ const Contact = () => {
       icon: Mail,
       label: 'Email',
       value: 'simon@lechevalier@hotmail.fr',
-      href: 'mailto:simon@lechevalier@hotmail.fr',
+      href: 'mailto:simon.lechevalier@hotmail.fr',
       color: 'hover:text-red-500'
     },
     {
@@ -117,7 +124,7 @@ const Contact = () => {
               <h3 className="text-card-title mb-6">Send a Message</h3>
               
               {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full">
                   <div>
                     <Input
                       name="name"
@@ -147,7 +154,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="input-premium resize-none"
+                      className="input-premium resize-none h-60"
                     />
                   </div>
                   <Button 
