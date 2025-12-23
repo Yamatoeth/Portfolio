@@ -52,7 +52,7 @@ const Experience = () => {
               {experiences.slice().reverse().map((exp, index) => (
                 <div 
                   key={exp.id}
-                  className={`relative flex items-center experience-item-animate z-[${experiences.length - index}] -mt-12 ${
+                  className={`relative flex items-center experience-item-animate z-[${experiences.length - index}] mt-2 ${
                     index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
