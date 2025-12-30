@@ -18,7 +18,9 @@ import projectteclis from '@/assets/project-teclis.png'
 import projectmamamouchou from '@/assets/project-mamamouchou.png'
 import projectkalissea from '@/assets/project-kalissea.png'
 import projectUpArena from '@/assets/project-uparena.png'
-
+import projectvilla88 from '@/assets/project-villa88.png'
+import projectterrathread from '@/assets/terrathread.png'
+import projectLatelier from '@/assets/atelierparisien.png'
 
 export interface Project {
   id: string;
@@ -162,7 +164,7 @@ export const projects: Project[] = [
   },
   {
     id: 'classic-5',
-    title: 'Ecommerce Shop',
+    title: 'Genixi',
     description: 'Ecommerce platform for a retail business with product catalog, shopping cart, and payment integration.',
     image: projectgenixishop,
     link: 'https://genixi.store/products/whitening-strips',
@@ -187,6 +189,61 @@ export const projects: Project[] = [
     category: 'shopify',
     technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
   },
+  {
+    id: 'classic-8',
+    title: 'Villa 88',
+    description: 'Website for a hostel in Hoi An, Vietnam',
+    image: projectvilla88,
+    link: 'https://villa88.vercel.app/',
+    category: 'shopify',
+    technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vercel', 'Vite']
+  },
+  {
+    id: 'classic-9',
+    title: 'Terra & Thread',
+    description: 'Landing page for a small hand made crafts in Vietnam',
+    image: projectterrathread,
+    link: 'https://terraandthread.vercel.app/',
+    category: 'landing page',
+    technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vercel', 'Vite']
+  },
+  {
+    id: 'ongoing-3',
+    title: 'UpArena',
+    description: 'Platform unifying streaming and prediction, where users can predicts the outcome of game streams and earn rewards.',
+    image: projectUpArena,
+    link: 'https://www.uparena.io/',
+    category: 'ongoing',
+    technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ]
+  },
+  {
+    id: 'classic-10',
+    title: "L'atelier Parisien",
+    description: 'Website for a high quality restaurant in Paris. Reservation system, menu showcase, and contact form.',
+    image: projectLatelier,
+    link: 'https://latelier-parisien.vercel.app/',
+    category: 'classic',
+    technologies: ['Vite', 'React', 'TailwindCSS', 'TypeScript', 'Vercel']
+  },
+
+];
+
+
+export const getProjectsByCategory = (category: Project['category']) => {
+  return projects.filter(project => project.category === category);
+};
+
+export const getFeaturedProjects = () => {
+  return projects.filter(project => project.featured);
+};
+
+export const getAllProjects = () => {
+  return projects;
+};
+
+export const getClassicProjects = () => {
+  return projects.filter(project => project.category === 'classic');
+};
 
   // Ongoing Projects
   // {
@@ -207,29 +264,3 @@ export const projects: Project[] = [
   //   category: 'ongoing',
   //   technologies: ['React', 'Node.js', 'AI/ML', 'python']
   // },
-  {
-    id: 'ongoing-3',
-    title: 'UpArena',
-    description: 'Platform unifying streaming and prediction, where users can predicts the outcome of game streams and earn rewards.',
-    image: projectUpArena,
-    link: 'https://www.uparena.io/',
-    category: 'ongoing',
-    technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ]
-  }
-];
-
-export const getProjectsByCategory = (category: Project['category']) => {
-  return projects.filter(project => project.category === category);
-};
-
-export const getFeaturedProjects = () => {
-  return projects.filter(project => project.featured);
-};
-
-export const getAllProjects = () => {
-  return projects;
-};
-
-export const getClassicProjects = () => {
-  return projects.filter(project => project.category === 'classic');
-};

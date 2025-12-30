@@ -60,7 +60,7 @@ export interface Experience {
     role: 'Freelance - Web Developer',
     company: 'Teclis Scientific',
     description: 'Migrated legacy Wix site to modern Next.js application.',
-    details: 'Revamped website for improved UX, performance, and maintainability, implementing Next.js, React, and TailwindCSS.',
+    details: 'Revamped website for improved UI/UX, performance, and maintainability, implementing Next.js, React, and TailwindCSS.',
     technologies: ['Next.js', 'React', 'TailwindCSS', 'HTML', 'CSS', 'API', 'SEO', 'CMS']
   },
   {
