@@ -46,16 +46,18 @@ const Services: React.FC = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 services-grid-animate">
             {services.map((item, idx) => (
-              <Card key={idx} className="service-card-animate hover:scale-105 hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-lg font-semibold mb-2 text-gradient">
-                    {item.service}
-                  </CardTitle>
-                  <CardDescription className="text-base text-muted-foreground">
-                    {item.benefit}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <div key={idx} className="service-card-animate h-full">
+                <Card className="card-service h-full">
+                  <CardHeader>
+                    <CardTitle className="text-lg font-semibold mb-2 text-gradient">
+                      {item.service}
+                    </CardTitle>
+                    <CardDescription className="text-base text-muted-foreground">
+                      {item.benefit}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
             ))}
           </div>
         </div>

@@ -63,20 +63,20 @@ const About = () => {
           </div>
 
           {/* Skills Graph */}
-          <div className="mb-20 skills-grid-animate">
+          <div className="mb-20 skills-grid-animate p-1 card-service">
             <KnowledgeGraph />
           </div>
 
           {/* Stats Section */}
           <div className="mt-20 grid grid-cols-2 lg:grid-cols-3 gap-8 stats-grid-animate">
             {[
-              { number: '10+', label: 'Projects Completed' },
+              { number: '20+', label: 'Projects Completed' },
               { number: '3+', label: 'Years Experience' },
-              { number: '10+', label: 'Technologies Mastered' },
+              { number: '12+', label: 'Technologies Mastered' },
             ].map((stat) => (
               <div 
                 key={stat.label}
-                className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border hover:bg-card transition-all duration-300 hover:scale-105 stat-card-animate"
+                className="text-center bg-card/50 backdrop-blur-sm stat-card-animate card-service"
               >
                 <div className="text-3xl lg:text-4xl font-display font-bold text-gradient mb-2">
                   {stat.number}

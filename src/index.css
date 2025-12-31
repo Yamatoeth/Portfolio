@@ -222,11 +222,18 @@
   }
 
 .btn-hero:hover {
-  box-shadow: var(--shadow-glow);
+  @apply scale-105;
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3);
 }
 
   .btn-secondary {
-    @apply bg-card border border-border text-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-card-hover hover:shadow-soft hover:scale-105;
+    @apply bg-card border border-border text-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-card-hover scale-105;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3);
+    border-color: hsl(var(--primary) / 0.5);
   }
 
   .btn-ghost {
@@ -239,7 +246,23 @@
   }
 
   .card-project {
-    @apply bg-card border border-border rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:shadow-medium hover:scale-105;
+    @apply bg-card border border-border rounded-xl overflow-hidden shadow-card transition-all duration-300;
+  }
+
+  .card-service {
+    @apply bg-card border border-border rounded-xl p-6 shadow-card transition-all duration-300;
+  }
+
+  .card-service:hover {
+    @apply scale-105;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3);
+    border-color: hsl(var(--primary) / 0.5);
+  }
+
+  .card-project:hover {
+    @apply scale-105;
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3);
+    border-color: hsl(var(--primary) / 0.5);
   }
 
   /* Input Styles */

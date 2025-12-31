@@ -1,8 +1,8 @@
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
-import Experience from '@/components/Experience';
-import Web3Achievements from '@/components/Web3Achievements';
+// import Experience from '@/components/Experience';
+// import Web3Achievements from '@/components/Web3Achievements';
 import OngoingProjects from '@/components/OngoingProjects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -19,7 +19,6 @@ const Index = () => {
       <Projects />
       <About />
       <Services />
-      <Experience />
       <OngoingProjects />
       <Contact />
       <Footer />

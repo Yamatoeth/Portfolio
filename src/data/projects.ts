@@ -78,6 +78,7 @@ export const projects: Project[] = [
     link: 'https://solwatcher-silk.vercel.app/',
     category: 'main',
     technologies: ['React', 'Supabase', 'Solana', 'Helius API'],
+    featured: false
   },
   {
     id: 'web3-3',
@@ -86,7 +87,8 @@ export const projects: Project[] = [
     image: projectBonkFeast,
     link: 'https://bonkfeast.fun/',
     category: 'web3',
-    technologies: ['html', 'css', 'js',]
+    technologies: ['html', 'css', 'js',],
+    featured: false
   },
   {
     id: 'web3-4',
@@ -94,7 +96,8 @@ export const projects: Project[] = [
     description: 'Demo of an ERC 4337 account abstraction on Sepolia Network',
     image: projectERC4337,
     category: 'web3',
-    technologies: ['hardhat', 'react', 'ethers.js', 'typescript']
+    technologies: ['hardhat', 'react', 'ethers.js', 'typescript'],
+    featured: false
   },
   {
     id: 'web3-5',
@@ -102,7 +105,8 @@ export const projects: Project[] = [
     description: 'Turn your SOL into yield with SolStake',
     image: projectSolStake,
     category: 'web3',
-    technologies: ['anchor', 'react', 'ethers.js', 'typescript']
+    technologies: ['anchor', 'react', 'ethers.js', 'typescript'],
+    featured: false
  },
   {
     id: 'web3-6',
@@ -110,7 +114,8 @@ export const projects: Project[] = [
     description: 'NFT MarketPlace for NFTs on Solana',
     image: projectNFTMarketplace,
     category: 'web3',
-    technologies: ['anchor', 'react', 'ethers.js', 'typescript']
+    technologies: ['anchor', 'react', 'ethers.js', 'typescript'],
+    featured: false
   },
 
   // Classic / Non-Web3 Projects
@@ -142,7 +147,8 @@ export const projects: Project[] = [
     image: projectBurkett,
     link: 'https://yamatoeth.github.io/Burkett-Co',
     category: 'landing page',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express']
+    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+    featured: false
   },
   {
     id: 'classic-3',
@@ -152,6 +158,7 @@ export const projects: Project[] = [
     link: 'https://yamatoeth.github.io/GlcSolutions',
     category: 'landing page',
     technologies: ['Next.js', 'TailwindCSS', 'TypeScript', 'Vercel'],
+    featured: false
   },
   {
     id: 'classic-4',
@@ -161,6 +168,7 @@ export const projects: Project[] = [
     link: 'https://yamatoeth.github.io/CoupalConstruction',
     category: 'landing page',
     technologies: ['React', 'Bootstrap', 'JavaScript', 'Netlify'],
+    featured: false
   },
   {
     id: 'classic-5',
@@ -169,7 +177,8 @@ export const projects: Project[] = [
     image: projectgenixishop,
     link: 'https://genixi.store/products/whitening-strips',
     category: 'shopify',
-    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads']
+    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads'],
+    featured: false
   },
   {
     id: 'classic-6',
@@ -178,7 +187,8 @@ export const projects: Project[] = [
     image: projectmamamouchou,
     link: 'https://mamamouchou.com/',
     category: 'shopify',
-    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
+    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva'],
+    featured: false
   },
   {
     id: 'classic-7',
@@ -187,7 +197,8 @@ export const projects: Project[] = [
     image: projectkalissea,
     link: 'https://kalissea.com/',
     category: 'shopify',
-    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva']
+    technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva'],
+    featured: true
   },
   {
     id: 'classic-8',
@@ -196,7 +207,8 @@ export const projects: Project[] = [
     image: projectvilla88,
     link: 'https://villa88.vercel.app/',
     category: 'shopify',
-    technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vercel', 'Vite']
+    technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vercel', 'Vite'],
+    featured: true
   },
   {
     id: 'classic-9',
@@ -205,7 +217,8 @@ export const projects: Project[] = [
     image: projectterrathread,
     link: 'https://terraandthread.vercel.app/',
     category: 'landing page',
-    technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vercel', 'Vite']
+    technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vercel', 'Vite'],
+    featured: false
   },
   {
     id: 'ongoing-3',
@@ -214,7 +227,8 @@ export const projects: Project[] = [
     image: projectUpArena,
     link: 'https://www.uparena.io/',
     category: 'ongoing',
-    technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ]
+    technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ],
+    featured: true
   },
   {
     id: 'classic-10',
@@ -223,7 +237,8 @@ export const projects: Project[] = [
     image: projectLatelier,
     link: 'https://latelier-parisien.vercel.app/',
     category: 'classic',
-    technologies: ['Vite', 'React', 'TailwindCSS', 'TypeScript', 'Vercel']
+    technologies: ['Vite', 'React', 'TailwindCSS', 'TypeScript', 'Vercel'],
+    featured: false
   },
 
 ];
