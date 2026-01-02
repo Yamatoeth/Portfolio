@@ -21,6 +21,8 @@ import projectUpArena from '@/assets/project-uparena.png'
 import projectvilla88 from '@/assets/project-villa88.png'
 import projectterrathread from '@/assets/terrathread.png'
 import projectLatelier from '@/assets/atelierparisien.png'
+import projectPaint from '@/assets/paint.png'
+import projectWoodWork from '@/assets/woodwork.png'
 
 export interface Project {
   id: string;
@@ -239,6 +241,26 @@ export const projects: Project[] = [
     category: 'classic',
     technologies: ['Vite', 'React', 'TailwindCSS', 'TypeScript', 'Vercel'],
     featured: false
+  },
+  {
+    id: 'classic-11',
+    title: 'WoodWork',
+    description: 'Showcase website for a woodworking company with project gallery and online quote form.',
+    image: projectWoodWork,
+    link: 'paris-woodworks-pro.vercel.app',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+    featured: true
+  },
+  {
+    id: 'classic-12',
+    title: 'Peinture Lyon',
+    description: 'Website for a painting company in Lyon, France',
+    image: projectPaint,
+    link: 'https://lyon-painter-pro.vercel.app/',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+    featured: true
   },
 
 ];
