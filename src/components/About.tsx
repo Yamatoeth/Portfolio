@@ -54,12 +54,12 @@ const About = () => {
             <h2 className="text-section-title text-gradient mb-6">
               About Me
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {/* <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               I'm a passionate developer who bridges the gap between traditional web development and 
               blockchain innovation. With a keen eye for user experience and a deep understanding of 
               modern technologies, I create digital solutions that not only work flawlessly but also 
               delight users and drive business growth.
-            </p>
+            </p> */}
           </div>
 
           {/* Skills Graph */}

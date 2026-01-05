@@ -38,9 +38,9 @@ const Services: React.FC = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-section-title text-gradient mb-6">Services</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {/* <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               What I offer: from robust web architectures to seamless blockchain integrations and scalable design systems.
-            </p>
+            </p> */}
           </div>
 
           {/* Services Grid */}

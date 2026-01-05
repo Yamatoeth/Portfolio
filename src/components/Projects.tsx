@@ -96,10 +96,10 @@ const Projects = () => {
             <h2 className="text-section-title text-gradient mb-6">
               Featured Projects
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {/* <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Discover my latest work in Web3 development, full-stack applications, and innovative digital solutions. 
               Each project represents a unique challenge solved with cutting-edge technology and creative thinking.
-            </p>
+            </p> */}
           </div>
 
           {/* Desktop Grid */}
