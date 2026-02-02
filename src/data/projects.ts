@@ -1,6 +1,3 @@
-
-import projectFilespy from '@/assets/project-filespy.png';
-import projectFolderly from '@/assets/project-folderly.png';
 import projectWF from '@/assets/project-wf.png';
 import projectBurkett from '@/assets/project-burkett.png';
 import projectSolwatcher from '@/assets/project-solwatcher.png';
@@ -23,6 +20,12 @@ import projectterrathread from '@/assets/terrathread.png'
 import projectLatelier from '@/assets/atelierparisien.png'
 import projectPaint from '@/assets/paint.png'
 import projectWoodWork from '@/assets/woodwork.png'
+import projectalplomberie from '@/assets/alplomberie.png'
+import projecthairsalon from '@/assets/hairsalon.png'
+import projectblueinstruments from '@/assets/music.png'
+import projectviced from '@/assets/viced.png'
+import projectvinhaKitchen from '@/assets/kitchen.png'
+import projectmiengPizzeria from '@/assets/mieng.png'
 
 export interface Project {
   id: string;
@@ -200,7 +203,7 @@ export const projects: Project[] = [
     link: 'https://kalissea.com/',
     category: 'shopify',
     technologies: ['Shopify', 'Custom Liquid', 'Facebook Ads', 'Canva'],
-    featured: true
+    featured: false
   },
   {
     id: 'classic-8',
@@ -210,7 +213,7 @@ export const projects: Project[] = [
     link: 'https://villa88.vercel.app/',
     category: 'shopify',
     technologies: ['React', 'TailwindCSS', 'TypeScript', 'Vercel', 'Vite'],
-    featured: true
+    featured: false
   },
   {
     id: 'classic-9',
@@ -250,7 +253,7 @@ export const projects: Project[] = [
     link: 'paris-woodworks-pro.vercel.app',
     category: 'landing page',
     technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
-    featured: true
+    featured: false
   },
   {
     id: 'classic-12',
@@ -260,8 +263,65 @@ export const projects: Project[] = [
     link: 'https://lyon-painter-pro.vercel.app/',
     category: 'landing page',
     technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+    featured: false
+  },
+  {
+    id: 'classic-13',
+    title: 'Mieng Pizzeria',
+    description: 'Website for a pizzeria in Lyon, France',
+    image: projectmiengPizzeria,
+    link: 'https://mieng-restaurant.vercel.app/',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+  },
+  {
+    id: 'classic-14',
+    title: 'Vi Nha Kitchen',
+    description: 'Website for a restaurant in Da Nang, Vietnam',
+    image: projectvinhaKitchen,
+    link: 'https://vi-nha-kitchen.vercel.app/',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+  },
+  {
+    id: 'classic-15',
+    title: 'Al Plomberie',
+    description: 'Website for a plumbing company in Paris, France',
+    image: projectalplomberie,
+    link: 'https://al-plomberie.vercel.app/',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+  },
+  {
+    id: 'classic-16',
+    title: 'Blue Instruments',
+    description: 'Website for a music instruments shop in Paris, France',
+    image: projectblueinstruments,
+    link: 'https://blue-instruments.vercel.app',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+  },
+  {
+    id: 'classic-17',
+    title: 'HairSalon',
+    description: 'Aesthetic website for a hair salon in Marseille, France',
+    image: projecthairsalon,
+    link: 'https://hairsalon-website.vercel.app/',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
     featured: true
   },
+  {
+    id: 'classic-18',
+    title: 'Viced',
+    description: 'Premium website for a weed brand',
+    image: projectviced,
+    link: 'https://viced.vercel.app/',
+    category: 'landing page',
+    technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
+    featured: true
+  }
+
 
 ];
 
