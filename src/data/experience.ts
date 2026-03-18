@@ -64,12 +64,30 @@ export interface Experience {
     technologies: ['Next.js', 'React', 'TailwindCSS', 'HTML', 'CSS', 'API', 'SEO', 'CMS']
   },
   {
-  id: 'exp-7',
-  year: 'October 2025 - Ongoing',
-  role: 'Developer',
-  company: 'UpArena',
-  description: 'Development of a Web3 platform focused on competitive gaming and tournaments.',
-  details: 'Building smart contracts, backend infrastructure, and frontend interfaces to support user interactions, NFT integrations, and tournament mechanics.',
-  technologies: ['React', 'Next.js', 'Chakra UI', 'PostgreSQL', 'Node.js', 'TypeScript', 'Supabase', 'Drizzle',]
+    id: 'exp-7',
+    year: 'October 2025 - Ongoing',
+    role: 'Developer',
+    company: 'UpArena',
+    description: 'Development of a Web3 platform focused on competitive gaming and tournaments.',
+    details: 'Building smart contracts, backend infrastructure, and frontend interfaces to support user interactions, NFT integrations, and tournament mechanics.',
+    technologies: ['React', 'Next.js', 'Chakra UI', 'PostgreSQL', 'Node.js', 'TypeScript', 'Supabase', 'Drizzle',]
+  },
+  {
+    id: 'exp-8',
+    year: '2026 - Ongoing',
+    role: '3D Web Developer',
+    company: 'Liquid Lab',
+    description: 'Built a browser-native high-fidelity 3D experience with real-time performance at scale.',
+    details: 'Designed a custom THREE.js/WebGL render pipeline with procedural animation, GPU-optimized asset delivery, and immersive interaction architecture, resulting in stable 60fps browser rendering without plugins.',
+    technologies: ['THREE.js', 'WebGL', 'GLSL', 'React', 'TypeScript', '3D', 'Procedural']
+  },
+  {
+    id: 'exp-9',
+    year: '2026 - Ongoing',
+    role: 'Mobile AI Developer',
+    company: 'Jarvis',
+    description: 'Built a unified AI voice assistant with customized data, combining voice, automation, and real-time reasoning.',
+    details: 'Implemented OpenAI API integration, a Python-powered NLP pipeline, voice I/O, Redis-backed context storage, a Unicorv service layer, and a task automation engine to enable natural language task execution with hands-free workflows.',
+    technologies: ['React Native', 'OpenAI', 'Python', 'Redis', 'Unicorn', 'NLP', 'Voice', 'TypeScript', 'Automation']
   }
 ];
