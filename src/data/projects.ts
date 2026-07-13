@@ -27,6 +27,7 @@ import projectviced from '@/assets/viced.webp'
 import projectvinhaKitchen from '@/assets/kitchen.webp'
 import projectmiengPizzeria from '@/assets/mieng.webp'
 import projectAnalytics from '@/assets/project-analytics.webp'
+import convai from '@/assets/convai.webp'
 
 export interface Project {
   id: string;
@@ -62,7 +63,7 @@ export const projects: Project[] = [
     id: 'convai-speech-analysis',
     title: 'ConvAI Speech Analysis Agent',
     description: 'Reusable workflow that turns raw speech recordings into structured summaries and extracted insights.',
-    image: projectAnalytics,
+    image: convai,
     category: 'main',
     technologies: ['Python', 'LLM APIs', 'Speech AI', 'Automation', 'JSON Outputs'],
     featured: true,
