@@ -1,11 +1,8 @@
-import { Suspense, useRef } from 'react';
+import { useRef } from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import React from 'react';
-
-const Hero3D = React.lazy(() => import('./Hero3D'));
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -66,12 +63,7 @@ const Hero = () => {
 
   return (
     <section ref={containerRef} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Suspense fallback={null}>
-          <Hero3D />
-        </Suspense>
-      </div>
+      <div className="hero-css-background absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Responsive layout: mobile column (image above text), desktop row (text left, image right) */}

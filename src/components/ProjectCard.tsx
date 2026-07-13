@@ -19,14 +19,25 @@ const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
     >
       {/* Project Image */}
       <div className="relative overflow-visible">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="block w-full h-auto transition-transform duration-500 group-hover:scale-110"
-          width={640}
-          height={420}
-          loading="lazy"
-        />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="block w-full h-auto transition-transform duration-500 group-hover:scale-110"
+            width={640}
+            height={420}
+            loading="lazy"
+          />
+        ) : (
+          <div className="project-placeholder flex aspect-[16/10] w-full flex-col justify-end p-6">
+            <span className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Demo Available
+            </span>
+            <span className="text-2xl font-display font-semibold text-foreground">
+              Visual coming soon
+            </span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Overlay Content */}

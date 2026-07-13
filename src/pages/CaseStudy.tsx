@@ -73,14 +73,25 @@ const CaseStudy = () => {
             </div>
 
             <div className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
-              <img
-                src={project.image}
-                alt={`${study.title} screenshot`}
-                width={960}
-                height={640}
-                fetchPriority="high"
-                className="h-full w-full object-cover"
-              />
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={`${study.title} screenshot`}
+                  width={960}
+                  height={640}
+                  fetchPriority="high"
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="project-placeholder flex aspect-[16/10] h-full w-full flex-col justify-end p-8">
+                  <span className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                    Demo Available
+                  </span>
+                  <span className="text-4xl font-display font-semibold text-foreground">
+                    Final project visual coming soon
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

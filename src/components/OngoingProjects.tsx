@@ -59,14 +59,25 @@ const OngoingProjects = () => {
 
                 {/* Project Image */}
                 <div className="relative aspect-[4/3] w-full mb-6 rounded-lg overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    width={640}
-                    height={480}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      width={640}
+                      height={480}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="project-placeholder flex h-full w-full flex-col justify-end p-6">
+                      <span className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                        Demo Available
+                      </span>
+                      <span className="text-2xl font-display font-semibold text-foreground">
+                        Visual coming soon
+                      </span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Progress Overlay */}

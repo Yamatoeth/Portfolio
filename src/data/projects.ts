@@ -27,13 +27,12 @@ import projectviced from '@/assets/viced.webp'
 import projectvinhaKitchen from '@/assets/kitchen.webp'
 import projectmiengPizzeria from '@/assets/mieng.webp'
 import projectAnalytics from '@/assets/project-analytics.webp'
-import projectFilespy from '@/assets/optimized/project-filespy-optimized.webp'
 
 export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   link?: string;
   githubLink?: string;
   category: 'main' | 'web3' | 'ongoing' | 'classic'| 'shopify'| 'landing page'| 'full-stack website';
@@ -51,7 +50,6 @@ export const projects: Project[] = [
     id: 'jarvis-voice-assistant',
     title: 'Jarvis Voice Assistant',
     description: 'Voice-first AI assistant with a low-latency STT/LLM/TTS pipeline.',
-    image: projectFilespy,
     githubLink: 'https://github.com/Yamatoeth/mobileapp',
     category: 'ongoing',
     technologies: ['React Native', 'Expo', 'FastAPI', 'Python', 'Deepgram', 'Groq', 'PostgreSQL', 'Redis', 'Docker'],
@@ -390,7 +388,6 @@ export const getClassicProjects = () => {
   //   id: 'ongoing-1',
   //   title: 'FileSpy',
   //   description: 'Advanced file analysis tool with AI-powered insights',
-  //   image: projectFilespy,
   //   link: 'https://file-spy.vercel.app/',
   //   category: 'ongoing',
   //   technologies: ['Electron', 'React', 'Python', 'Machine Learning']
