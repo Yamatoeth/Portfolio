@@ -43,4 +43,4 @@ The portfolio includes targeted resume PDFs under `public/resumes/`:
 - API / automation: `simon-lechevalier-api-automation.pdf`
 - Web3 integration: `simon-lechevalier-web3-integration.pdf`
 
-The default `/resume.pdf` mirrors the full-stack version. Application tracking templates live in `docs/`.
+The default `/resume.pdf` mirrors the full-stack version.
