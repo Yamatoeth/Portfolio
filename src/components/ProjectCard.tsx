@@ -12,6 +12,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
   const caseStudy = getCaseStudyByProjectId(project.id);
   const hasActions = Boolean(project.link || project.githubLink || caseStudy);
+  const imageFit = project.imageFit ?? 'cover';
 
   return (
     <article
@@ -23,7 +24,10 @@ const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
           <img
             src={project.image}
             alt={project.title}
-            className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`block h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+              imageFit === 'contain' ? 'object-contain p-3' : 'object-cover'
+            }`}
+            style={{ objectPosition: project.imagePosition ?? 'center' }}
             width={640}
             height={360}
             loading="lazy"

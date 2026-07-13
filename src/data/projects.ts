@@ -34,6 +34,8 @@ export interface Project {
   title: string;
   description: string;
   image?: string;
+  imageFit?: 'cover' | 'contain';
+  imagePosition?: string;
   link?: string;
   githubLink?: string;
   category: 'main' | 'web3' | 'ongoing' | 'classic'| 'shopify'| 'landing page'| 'full-stack website';
@@ -64,6 +66,7 @@ export const projects: Project[] = [
     title: 'ConvAI Speech Analysis Agent',
     description: 'Reusable workflow that turns raw speech recordings into structured summaries and extracted insights.',
     image: convai,
+    imageFit: 'contain',
     category: 'main',
     technologies: ['Python', 'LLM APIs', 'Speech AI', 'Automation', 'JSON Outputs'],
     featured: true,
@@ -166,6 +169,8 @@ export const projects: Project[] = [
     title: 'Teclis Scientific',
     description: 'Website for a Leading manufacturer of cutting-edge scientific instruments.',
     image: projectteclis, 
+    imageFit: 'contain',
+    imagePosition: 'top center',
     link: 'https://teclis-nextjs.vercel.app/en',
     category: 'full-stack website',
     technologies: ['Nextjs', 'TailwindCSS', 'TypeScript', 'React', 'Vercel', 'Sanity CMS', 'REST API', 'SEO', 'Multilanguage'],
@@ -269,6 +274,7 @@ export const projects: Project[] = [
     title: 'UpArena',
     description: 'Platform unifying streaming and prediction, where users can predicts the outcome of game streams and earn rewards.',
     image: projectUpArena,
+    imageFit: 'contain',
     link: 'https://www.uparena.io/',
     category: 'ongoing',
     technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ],

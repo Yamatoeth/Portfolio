@@ -27,6 +27,7 @@ const CaseStudy = () => {
   }
 
   const { project } = study;
+  const imageFit = project.imageFit ?? 'cover';
 
   return (
     <main className="min-h-screen bg-background">
@@ -80,7 +81,8 @@ const CaseStudy = () => {
                   width={960}
                   height={640}
                   fetchPriority="high"
-                  className="h-full w-full object-cover"
+                  className={`h-full w-full ${imageFit === 'contain' ? 'object-contain p-4' : 'object-cover'}`}
+                  style={{ objectPosition: project.imagePosition ?? 'center' }}
                 />
               ) : (
                 <div className="project-placeholder flex aspect-[16/10] h-full w-full flex-col justify-end p-8">
