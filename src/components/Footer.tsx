@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart, ArrowUp } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -11,6 +11,13 @@ const Footer = () => {
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' }
+  ];
+
+  const resumes = [
+    { label: 'Full-Stack CV', href: '/resumes/simon-lechevalier-full-stack.pdf' },
+    { label: 'Frontend CV', href: '/resumes/simon-lechevalier-frontend-nextjs.pdf' },
+    { label: 'API / Automation CV', href: '/resumes/simon-lechevalier-api-automation.pdf' },
+    { label: 'Web3 CV', href: '/resumes/simon-lechevalier-web3-integration.pdf' },
   ];
 
   const socialLinks = [
@@ -31,8 +38,8 @@ const Footer = () => {
                 Simon
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-                Passionate Web3 & Full-Stack Developer creating innovative digital experiences 
-                that bridge traditional development with blockchain technology.
+                Full-stack software engineer building web, mobile, API, automation, CMS,
+                and integration projects with a product-minded delivery focus.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((link) => {
@@ -91,17 +98,21 @@ const Footer = () => {
                 >
                   Let's Work Together
                 </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="btn-secondary"
-                >
-                  <a href="/resume.pdf" download>
-                  Download Resume
-                  </a>
-                </Button>
               </div>
             </div>
+          </div>
+
+          <div className="grid gap-3 rounded-lg border border-border bg-muted/20 p-4 md:grid-cols-4">
+            {resumes.map((resume) => (
+              <a
+                key={resume.href}
+                href={resume.href}
+                download
+                className="rounded-md border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                {resume.label}
+              </a>
+            ))}
           </div>
 
           {/* Divider */}

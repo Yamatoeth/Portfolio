@@ -8,6 +8,7 @@ const OngoingProjects = () => {
   const ongoingProjects = getProjectsByCategory('ongoing');
 
   const gridClasses = ongoingProjects.length === 1 ? 'grid grid-cols-1 justify-center gap-8 mb-12' : 'grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12';
+  const getProgress = (projectId: string) => projectId === 'jarvis-voice-assistant' ? '75%' : '70%';
 
   return (
     <section id="ongoing" className="py-5 px-6">
@@ -23,8 +24,8 @@ const OngoingProjects = () => {
               <Sparkles className="h-6 w-6 text-primary animate-pulse" />
             </div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Currently in development: cutting-edge projects that will revolutionize 
-              how we interact with technology. Stay tuned for these exciting launches!
+              Active work that shows how I think through product scope, integration constraints,
+              latency, onboarding, and delivery while the project is still evolving.
             </p>
           </div>
 
@@ -61,6 +62,9 @@ const OngoingProjects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
+                    width={640}
+                    height={480}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -70,13 +74,13 @@ const OngoingProjects = () => {
                     <div className="bg-card/80 backdrop-blur-sm rounded-lg p-3 border border-border/50">
                       <div className="flex justify-between items-center text-xs text-muted-foreground mb-2">
                         <span>Progress</span>
-                        <span>{project.id === 'ongoing-1' ? '75%' : '70%'}</span>
+                        <span>{getProgress(project.id)}</span>
                       </div>
                       <div className="w-full bg-muted rounded-full h-2">
                         <div 
                           className="bg-gradient-primary h-2 rounded-full transition-all duration-1000 ease-out"
                           style={{ 
-                            width: project.id === 'ongoing-1' ? '75%' : '70%',
+                            width: getProgress(project.id),
                             animationDelay: `${index * 0.5}s`
                           }}
                         ></div>
@@ -110,15 +114,18 @@ const OngoingProjects = () => {
                   <div className={`transition-all duration-300 ${
                     hoveredId === project.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                   }`}>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="btn-secondary group/btn"
-                      onClick={() => window.open(project.link, '_blank')}
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
+                    {(project.link || project.githubLink) && (
+                      <Button variant="outline" size="sm" className="btn-secondary group/btn" asChild>
+                        <a
+                          href={project.link ?? project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Learn More
+                          <ArrowRight className="ml-2 h-3 w-3 group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

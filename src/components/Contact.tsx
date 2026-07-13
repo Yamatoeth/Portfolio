@@ -90,7 +90,7 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'simon@lechevalier@hotmail.fr',
+      value: 'simon.lechevalier@hotmail.fr',
       href: 'mailto:simon.lechevalier@hotmail.fr',
       color: 'hover:text-red-500'
     },
@@ -110,11 +110,11 @@ const Contact = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-section-title text-gradient mb-6">
-              Let's Work Together!
+              Let's Talk
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Have a project in mind? Let's discuss how we can bring your vision to life 
-              with cutting-edge technology and innovative solutions.
+              Open to engineering roles, startup teams, integration work, and focused freelance projects.
+              Send a short message and I will reply with the next useful step.
             </p>
           </div>
 
@@ -127,8 +127,10 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full">
                   <div>
                     <Input
+                      aria-label="Name"
                       name="name"
-                      placeholder="Your Name"
+                      autoComplete="name"
+                      placeholder="Your name..."
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -137,9 +139,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <Input
+                      aria-label="Email"
                       type="email"
                       name="email"
-                      placeholder="Your Email"
+                      autoComplete="email"
+                      spellCheck={false}
+                      placeholder="you@example.com..."
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -148,8 +153,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <Textarea
+                      aria-label="Message"
                       name="message"
-                      placeholder="Tell me about your project..."
+                      placeholder="Tell me about the role or project..."
                       value={formData.message}
                       onChange={handleChange}
                       required

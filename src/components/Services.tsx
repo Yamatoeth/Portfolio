@@ -27,6 +27,7 @@ const Services: React.FC = () => {
           start: "top 85%",
           toggleActions: "play none none none",
         },
+        immediateRender: false,
       }
     );
   }, { scope: containerRef });

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
@@ -68,7 +68,9 @@ const Hero = () => {
     <section ref={containerRef} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Hero3D />
+        <Suspense fallback={null}>
+          <Hero3D />
+        </Suspense>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -82,11 +84,11 @@ const Hero = () => {
                 Simon
               </h1>
               <p className="text-2xl lg:text-3xl font-display font-medium text-muted-foreground mb-4">
-                Full-Stack Developer & Web3 Programmer
+                Full-Stack Software Engineer
               </p>
               <p className="text-lg lg:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-                Crafting innovative digital experiences that bridge traditional web development 
-                with cutting-edge blockchain technology. Building the future, one line of code at a time.
+                I build production-ready web and mobile products with React, Next.js, React Native,
+                FastAPI, PostgreSQL, automation workflows, and pragmatic Web3 integrations.
               </p>
             </div>
 
@@ -111,7 +113,7 @@ const Hero = () => {
                 variant="outline"
                 className="btn-secondary"
               >
-                <a href="/resume.pdf" download>
+                <a href="/resumes/simon-lechevalier-full-stack.pdf" download>
                   Download Resume
                 </a>
               </Button>
@@ -123,6 +125,7 @@ const Hero = () => {
                 href="https://github.com/yamatoeth" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="Open GitHub profile"
                 className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:bg-card hover:scale-110 transition-all duration-300 hover:shadow-soft"
               >
                 <Github className="h-5 w-5" />
@@ -131,12 +134,14 @@ const Hero = () => {
                 href="https://linkedin.com/in/simon-lechevalier-5ba743198" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="Open LinkedIn profile"
                 className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:bg-card hover:scale-110 transition-all duration-300 hover:shadow-soft"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
                 href="mailto:simon.lechevalier@hotmail.fr"
+                aria-label="Send an email"
                 className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:bg-card hover:scale-110 transition-all duration-300 hover:shadow-soft"
               >
                 <Mail className="h-5 w-5" />
@@ -147,8 +152,11 @@ const Hero = () => {
           {/* Image Column */}
           <div className="order-1 lg:order-2 w-full lg:w-auto flex justify-center lg:justify-end">
             <img 
-              src="/pfpirl.png" 
-              alt="Profile photo"
+              src="/pfpirl-optimized.webp" 
+              alt="Simon Lechevalier"
+              width={450}
+              height={450}
+              fetchPriority="high"
               className="w-40 h-40 lg:w-[450px] lg:h-[450px] rounded-full border-4 border-card shadow-lg object-cover"
             />
           </div>

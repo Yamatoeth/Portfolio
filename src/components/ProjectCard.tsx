@@ -1,57 +1,57 @@
 import { ExternalLink, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Project } from '@/data/projects';
+import { getCaseStudyByProjectId } from '@/data/caseStudies';
 
 interface ProjectCardProps {
   project: Project;
   isActive?: boolean;
-  onClick?: () => void;
 }
 
-const ProjectCard = ({ project, isActive = false, onClick }: ProjectCardProps) => {
+const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
+  const caseStudy = getCaseStudyByProjectId(project.id);
+  const hasActions = Boolean(project.link || project.githubLink || caseStudy);
+
   return (
-    <div 
-      className={`card-project cursor-pointer group ${isActive ? 'scale-105 shadow-medium' : ''} flex flex-col h-full`}
-      onClick={onClick}
+    <article
+      className={`card-project group ${isActive ? 'scale-105 shadow-medium' : ''} flex flex-col h-full`}
     >
       {/* Project Image */}
       <div className="relative overflow-visible">
         <img 
           src={project.image} 
           alt={project.title}
-          className="block transition-transform duration-500 group-hover:scale-110"
-          style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
+          className="block w-full h-auto transition-transform duration-500 group-hover:scale-110"
+          width={640}
+          height={420}
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Overlay Content */}
+        {hasActions && (
         <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
           <div className="flex gap-2 mb-4">
-            <Button 
-              size="sm" 
-              className="btn-hero text-xs"
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(project.link, '_blank');
-              }}
-            >
-              <ExternalLink className="h-3 w-3 mr-1" />
-              Live Demo
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="btn-secondary text-xs"
-              onClick={(e) => {
-                e.stopPropagation();
-                // Could link to GitHub if available
-              }}
-            >
-              <Github className="h-3 w-3 mr-1" />
-              Code
-            </Button>
+            {project.link && (
+              <Button size="sm" className="btn-hero text-xs" asChild>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-3 w-3 mr-1" aria-hidden="true" />
+                  Live Demo
+                </a>
+              </Button>
+            )}
+            {project.githubLink && (
+              <Button variant="outline" size="sm" className="btn-secondary text-xs" asChild>
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                  <Github className="h-3 w-3 mr-1" aria-hidden="true" />
+                  Code
+                </a>
+              </Button>
+            )}
           </div>
         </div>
+        )}
       </div>
 
       {/* Project Content */}
@@ -62,6 +62,57 @@ const ProjectCard = ({ project, isActive = false, onClick }: ProjectCardProps) =
         <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
           {project.description}
         </p>
+
+        {(project.problem || project.role || project.outcome) && (
+          <dl className="space-y-3 mb-5 text-sm">
+            {project.problem && (
+              <div>
+                <dt className="font-semibold text-foreground">Problem</dt>
+                <dd className="text-muted-foreground leading-relaxed">{project.problem}</dd>
+              </div>
+            )}
+            {project.role && (
+              <div>
+                <dt className="font-semibold text-foreground">Role</dt>
+                <dd className="text-muted-foreground leading-relaxed">{project.role}</dd>
+              </div>
+            )}
+            {project.outcome && (
+              <div>
+                <dt className="font-semibold text-foreground">Outcome</dt>
+                <dd className="text-muted-foreground leading-relaxed">{project.outcome}</dd>
+              </div>
+            )}
+          </dl>
+        )}
+
+        {hasActions && (
+          <div className="flex flex-wrap gap-2 mb-5">
+            {caseStudy && (
+              <Button size="sm" className="btn-hero text-xs" asChild>
+                <Link to={`/projects/${caseStudy.id}`}>
+                  Case Study
+                </Link>
+              </Button>
+            )}
+            {project.link && (
+              <Button variant="outline" size="sm" className="btn-secondary text-xs" asChild>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-3 w-3 mr-1" aria-hidden="true" />
+                  Live Demo
+                </a>
+              </Button>
+            )}
+            {project.githubLink && (
+              <Button variant="outline" size="sm" className="btn-secondary text-xs" asChild>
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                  <Github className="h-3 w-3 mr-1" aria-hidden="true" />
+                  Code
+                </a>
+              </Button>
+            )}
+          </div>
+        )}
         
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mt-auto">
@@ -75,7 +126,7 @@ const ProjectCard = ({ project, isActive = false, onClick }: ProjectCardProps) =
           ))}
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

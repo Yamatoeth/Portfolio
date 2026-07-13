@@ -1,20 +1,20 @@
-import { useRef, useMemo, Suspense, Component, ReactNode } from 'react';
+import { useRef, useMemo, Suspense, Component, ErrorInfo, ReactNode } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 import HeroBackgroundFallback from './HeroBackgroundFallback';
 
 class ErrorBoundary extends Component<{ children: ReactNode, fallback: ReactNode }, { hasError: boolean }> {
-  constructor(props: any) {
+  constructor(props: { children: ReactNode, fallback: ReactNode }) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: any) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
-  componentDidCatch(error: any, errorInfo: any) {
+  componentDidCatch(error: unknown, errorInfo: ErrorInfo) {
     console.error("Hero3D Error:", error, errorInfo);
   }
 
@@ -27,7 +27,7 @@ class ErrorBoundary extends Component<{ children: ReactNode, fallback: ReactNode
   }
 }
 
-const ParticleField = (props: any) => {
+const ParticleField = () => {
   const ref = useRef<THREE.Points>(null!);
   
   // Create 5000 random points in a sphere
@@ -57,7 +57,7 @@ const ParticleField = (props: any) => {
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
           color="#3b82f6" // Primary blue-ish
