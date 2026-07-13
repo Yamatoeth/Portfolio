@@ -18,18 +18,18 @@ const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
       className={`card-project group ${isActive ? 'scale-105 shadow-medium' : ''} flex flex-col h-full`}
     >
       {/* Project Image */}
-      <div className="relative overflow-visible">
+      <div className="relative aspect-[2/1] overflow-hidden bg-muted">
         {project.image ? (
           <img
             src={project.image}
             alt={project.title}
-            className="block w-full h-auto transition-transform duration-500 group-hover:scale-110"
+            className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             width={640}
-            height={420}
+            height={360}
             loading="lazy"
           />
         ) : (
-          <div className="project-placeholder flex aspect-[16/10] w-full flex-col justify-end p-6">
+          <div className="project-placeholder flex h-full w-full flex-col justify-end p-6">
             <span className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               Demo Available
             </span>
@@ -67,38 +67,38 @@ const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
 
       {/* Project Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-card-title group-hover:text-primary transition-colors">
+        <h3 className="text-card-title min-h-[3.25rem] group-hover:text-primary transition-colors">
           {project.title}
         </h3>
-        <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
+        <p className="text-muted-foreground mb-5 leading-relaxed line-clamp-2 min-h-[3.5rem]">
           {project.description}
         </p>
 
         {(project.problem || project.role || project.outcome) && (
-          <dl className="space-y-3 mb-5 text-sm">
+          <dl className="grid gap-2.5 mb-5 text-sm">
             {project.problem && (
-              <div>
+              <div className="rounded-md border border-border/70 bg-muted/20 p-2.5">
                 <dt className="font-semibold text-foreground">Problem</dt>
-                <dd className="text-muted-foreground leading-relaxed">{project.problem}</dd>
+                <dd className="text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.75rem]">{project.problem}</dd>
               </div>
             )}
             {project.role && (
-              <div>
+              <div className="rounded-md border border-border/70 bg-muted/20 p-2.5">
                 <dt className="font-semibold text-foreground">Role</dt>
-                <dd className="text-muted-foreground leading-relaxed">{project.role}</dd>
+                <dd className="text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.75rem]">{project.role}</dd>
               </div>
             )}
             {project.outcome && (
-              <div>
+              <div className="rounded-md border border-border/70 bg-muted/20 p-2.5">
                 <dt className="font-semibold text-foreground">Outcome</dt>
-                <dd className="text-muted-foreground leading-relaxed">{project.outcome}</dd>
+                <dd className="text-muted-foreground leading-relaxed line-clamp-2 min-h-[2.75rem]">{project.outcome}</dd>
               </div>
             )}
           </dl>
         )}
 
         {hasActions && (
-          <div className="flex flex-wrap gap-2 mb-5">
+          <div className="flex flex-wrap gap-2 mb-5 mt-auto">
             {caseStudy && (
               <Button size="sm" className="btn-hero text-xs" asChild>
                 <Link to={`/projects/${caseStudy.id}`}>
@@ -126,8 +126,8 @@ const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
         )}
         
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mt-auto">
-          {project.technologies.map((tech) => (
+        <div className="flex flex-wrap gap-2 min-h-[4.75rem] content-start">
+          {project.technologies.slice(0, 8).map((tech) => (
             <span 
               key={tech}
               className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full border border-border group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/20 transition-all duration-300"
@@ -135,6 +135,11 @@ const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
               {tech}
             </span>
           ))}
+          {project.technologies.length > 8 && (
+            <span className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full border border-border">
+              +{project.technologies.length - 8}
+            </span>
+          )}
         </div>
       </div>
     </article>

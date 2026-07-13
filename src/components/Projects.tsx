@@ -104,11 +104,11 @@ const Projects = () => {
 
           {/* Desktop Grid */}
           {!isMobile && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 items-stretch">
               {featuredProjects.map((project, index) => (
                 <div 
                   key={project.id}
-                  className="animate-scale-in"
+                  className="project-card-animate animate-scale-in h-full"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <ProjectCard 
