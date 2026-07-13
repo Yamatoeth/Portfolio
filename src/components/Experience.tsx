@@ -12,8 +12,8 @@ const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const items = gsap.utils.toArray('.experience-item-animate');
-    items.forEach((item: any) => {
+    const items = gsap.utils.toArray<HTMLElement>('.experience-item-animate');
+    items.forEach((item) => {
       gsap.from(item, {
         scrollTrigger: {
           trigger: item,

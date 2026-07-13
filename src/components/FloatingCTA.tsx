@@ -35,8 +35,9 @@ const FloatingCTA = () => {
               size="sm"
               onClick={() => setIsExpanded(false)}
               className="h-6 w-6 p-0"
+              aria-label="Close contact prompt"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" aria-hidden="true" />
             </Button>
           </div>
           <p className="text-sm text-muted-foreground mb-4">
@@ -53,8 +54,9 @@ const FloatingCTA = () => {
         <Button
           onClick={() => setIsExpanded(true)}
           className="rounded-full w-14 h-14 btn-hero shadow-glow animate-pulse hover:animate-none group"
+          aria-label="Open contact prompt"
         >
-          <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
+          <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" aria-hidden="true" />
         </Button>
       )}
     </div>

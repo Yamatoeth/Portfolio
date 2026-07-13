@@ -1,8 +1,8 @@
-# Web3 Portfolio
+# Simon Lechevalier Portfolio
 
-This portfolio aim to showcase my web3 projects and skills. It is built with React and TypeScript.
+Portfolio for a full-stack software engineer focused on React, Next.js, React Native, FastAPI, PostgreSQL, automation workflows, and pragmatic Web3 integrations.
 
-As a strong Web3 enjoyer, i started my journey with Ethereum and Solidity. I fully masterized web3 libraries and tools, and built a number of projects.
+The main page is intentionally curated around the strongest proof points: production delivery, AI/audio workflows, CMS-backed international sites, and Web3 product UX. Additional projects remain available as archive material rather than primary positioning.
 
 
 # Stack
@@ -12,18 +12,18 @@ React
 TypeScript
 Tailwind CSS
 Three.js
-GASP
+GSAP
 d3.js
 
 # Additional Capabilities
 
-Covers tools and domains not showcased in the portfolio but fully operational in practice: 
+Covers tools and domains not always showcased in the primary portfolio but used in practice:
 i18n systems, 
 Shopify integration, 
 Next-intl usage, 
 Supabase workflows, 
 Drizzle ORM, 
-Oauth systems,
+OAuth systems,
 Captcha Integration,
 Form systems,
 REST API integration, 
@@ -33,3 +33,14 @@ Authentication flows,
 State handling, 
 Schema management, 
 Deployment pipelines
+
+# Job Search Assets
+
+The portfolio includes targeted resume PDFs under `public/resumes/`:
+
+- Full-stack: `simon-lechevalier-full-stack.pdf`
+- Frontend / Next.js: `simon-lechevalier-frontend-nextjs.pdf`
+- API / automation: `simon-lechevalier-api-automation.pdf`
+- Web3 integration: `simon-lechevalier-web3-integration.pdf`
+
+The default `/resume.pdf` mirrors the full-stack version. Application tracking templates live in `docs/`.

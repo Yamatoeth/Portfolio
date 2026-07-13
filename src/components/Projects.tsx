@@ -30,8 +30,8 @@ const Projects = () => {
 
   useGSAP(() => {
     if (!isMobile) {
-      const cards = gsap.utils.toArray('.project-card-animate');
-      cards.forEach((card: any, index) => {
+      const cards = gsap.utils.toArray<HTMLElement>('.project-card-animate');
+      cards.forEach((card, index) => {
         gsap.from(card, {
           scrollTrigger: {
             trigger: card,
@@ -94,12 +94,12 @@ const Projects = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-section-title text-gradient mb-6">
-              Featured Projects
+              Selected Case Studies
             </h2>
-            {/* <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover my latest work in Web3 development, full-stack applications, and innovative digital solutions. 
-              Each project represents a unique challenge solved with cutting-edge technology and creative thinking.
-            </p> */}
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A shorter, recruiter-friendly set of projects showing product delivery, APIs,
+              automation, mobile work, CMS architecture, and Web3 integration where it matters.
+            </p>
           </div>
 
           {/* Desktop Grid */}
@@ -113,7 +113,6 @@ const Projects = () => {
                 >
                   <ProjectCard 
                     project={project}
-                    onClick={() => window.open(project.link, '_blank')}
                   />
                 </div>
               ))}
@@ -138,7 +137,6 @@ const Projects = () => {
                       <ProjectCard 
                         project={project}
                         isActive={index === currentIndex}
-                        onClick={() => window.open(project.link, '_blank')}
                       />
                     </div>
                   ))}

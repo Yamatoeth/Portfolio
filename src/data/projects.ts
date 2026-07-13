@@ -1,31 +1,33 @@
-import projectWF from '@/assets/project-wf.png';
-import projectBurkett from '@/assets/project-burkett.png';
-import projectSolwatcher from '@/assets/project-solwatcher.png';
-import projectGLC from '@/assets/project-glc.png';
-import projectCoupalConstruction from '@/assets/project-coupal-construction.png';
-import projectBonkFeast from '@/assets/project-bonkfeast.png';
-import projectwrldtokendapp from '@/assets/project-wrldtokendapp.png';
-import projectjuicewrldnft from '@/assets/project-juicewrldnft.png';
-import projectgenixishop from '@/assets/project-genixishop.png';
-import projectlendingapp from '@/assets/project-lendingapp.png';
-import projectSolStake from '@/assets/project-solstake.png';
-import projectNFTMarketplace from '@/assets/project-nftmarketplace.png';
-import projectERC4337 from '@/assets/project-erc4337.png';
-import projectteclis from '@/assets/project-teclis.png'
-import projectmamamouchou from '@/assets/project-mamamouchou.png'
-import projectkalissea from '@/assets/project-kalissea.png'
-import projectUpArena from '@/assets/project-uparena.png'
-import projectvilla88 from '@/assets/project-villa88.png'
-import projectterrathread from '@/assets/terrathread.png'
-import projectLatelier from '@/assets/atelierparisien.png'
-import projectPaint from '@/assets/paint.png'
-import projectWoodWork from '@/assets/woodwork.png'
-import projectalplomberie from '@/assets/alplomberie.png'
-import projecthairsalon from '@/assets/hairsalon.png'
-import projectblueinstruments from '@/assets/music.png'
-import projectviced from '@/assets/viced.png'
-import projectvinhaKitchen from '@/assets/kitchen.png'
-import projectmiengPizzeria from '@/assets/mieng.png'
+import projectWF from '@/assets/project-wf.webp';
+import projectBurkett from '@/assets/project-burkett.webp';
+import projectSolwatcher from '@/assets/project-solwatcher.webp';
+import projectGLC from '@/assets/project-glc.webp';
+import projectCoupalConstruction from '@/assets/project-coupal-construction.webp';
+import projectBonkFeast from '@/assets/project-bonkfeast.webp';
+import projectwrldtokendapp from '@/assets/project-wrldtokendapp.webp';
+import projectjuicewrldnft from '@/assets/project-juicewrldnft.webp';
+import projectgenixishop from '@/assets/project-genixishop.webp';
+import projectlendingapp from '@/assets/project-lendingapp.webp';
+import projectSolStake from '@/assets/project-solstake.webp';
+import projectNFTMarketplace from '@/assets/project-nftmarketplace.webp';
+import projectERC4337 from '@/assets/project-erc4337.webp';
+import projectteclis from '@/assets/optimized/project-teclis-optimized.webp'
+import projectmamamouchou from '@/assets/project-mamamouchou.webp'
+import projectkalissea from '@/assets/project-kalissea.webp'
+import projectUpArena from '@/assets/optimized/project-uparena-optimized.webp'
+import projectvilla88 from '@/assets/project-villa88.webp'
+import projectterrathread from '@/assets/terrathread.webp'
+import projectLatelier from '@/assets/atelierparisien.webp'
+import projectPaint from '@/assets/paint.webp'
+import projectWoodWork from '@/assets/woodwork.webp'
+import projectalplomberie from '@/assets/alplomberie.webp'
+import projecthairsalon from '@/assets/hairsalon.webp'
+import projectblueinstruments from '@/assets/music.webp'
+import projectviced from '@/assets/viced.webp'
+import projectvinhaKitchen from '@/assets/kitchen.webp'
+import projectmiengPizzeria from '@/assets/mieng.webp'
+import projectAnalytics from '@/assets/project-analytics.webp'
+import projectFilespy from '@/assets/optimized/project-filespy-optimized.webp'
 
 export interface Project {
   id: string;
@@ -33,14 +35,43 @@ export interface Project {
   description: string;
   image: string;
   link?: string;
+  githubLink?: string;
   category: 'main' | 'web3' | 'ongoing' | 'classic'| 'shopify'| 'landing page'| 'full-stack website';
   technologies: string[];
   featured?: boolean;
+  problem?: string;
+  role?: string;
+  outcome?: string;
 }
 
 export const projects: Project[] = [
 
   // Main Featured Projects
+  {
+    id: 'jarvis-voice-assistant',
+    title: 'Jarvis Voice Assistant',
+    description: 'Voice-first AI assistant with a low-latency STT/LLM/TTS pipeline.',
+    image: projectFilespy,
+    githubLink: 'https://github.com/Yamatoeth/mobileapp',
+    category: 'ongoing',
+    technologies: ['React Native', 'Expo', 'FastAPI', 'Python', 'Deepgram', 'Groq', 'PostgreSQL', 'Redis', 'Docker'],
+    featured: true,
+    problem: 'Voice AI assistants need fast spoken responses and a backend that can coordinate audio, context, and model calls reliably.',
+    role: 'Built the mobile client and backend-owned voice pipeline around speech-to-text, LLM response generation, text-to-speech, persistence, and local fallbacks.',
+    outcome: 'Functional spoken question-to-answer workflow with around 2 seconds latency in the target path.'
+  },
+  {
+    id: 'convai-speech-analysis',
+    title: 'ConvAI Speech Analysis Agent',
+    description: 'Reusable workflow that turns raw speech recordings into structured summaries and extracted insights.',
+    image: projectAnalytics,
+    category: 'main',
+    technologies: ['Python', 'LLM APIs', 'Speech AI', 'Automation', 'JSON Outputs'],
+    featured: true,
+    problem: 'Speech recordings are hard to review, search, summarize, and reuse without a repeatable analysis pipeline.',
+    role: 'Designed an ingestion and analysis workflow that converts audio into structured outputs suitable for automation.',
+    outcome: 'Raw recordings become actionable summaries, extracted insights, and machine-readable JSON.'
+  },
   
   {
     id: 'Project-2',
@@ -50,7 +81,10 @@ export const projects: Project[] = [
     link: 'https://juice-wrld-nft.vercel.app/',
     category: 'main',
     technologies: ['React', 'ThirdWeb SDK', 'Solidity', 'TypeScript'],
-    featured: false
+    featured: false,
+    problem: 'NFT minting flows need clear contract state, network feedback, and wallet interaction handling.',
+    role: 'Built the minting interface and contract integration on Sepolia.',
+    outcome: 'Working ERC-1155 minting dapp demo with wallet-based execution.'
   },
   {
     id: 'project-3',
@@ -60,7 +94,7 @@ export const projects: Project[] = [
     link: 'https://wrld-sepolia-dapp.vercel.app/',
     category: 'main',
     technologies: ['React', 'Solidity', 'Remix', 'ethers.js'],
-    featured: true
+    featured: false
   },
   {
     id: 'project-1',
@@ -70,7 +104,7 @@ export const projects: Project[] = [
     link: 'https://sepolia-lend-borrow-demo.vercel.app/',
     category: 'main',
     technologies: ['React', 'Typescript', 'Hardhat', 'Ethersjs'],
-    featured: true
+    featured: false
   },
   
   // Web3 Projects // 
@@ -83,7 +117,10 @@ export const projects: Project[] = [
     link: 'https://solwatcher-silk.vercel.app/',
     category: 'main',
     technologies: ['React', 'Supabase', 'Solana', 'Helius API'],
-    featured: false
+    featured: false,
+    problem: 'Solana users need a readable way to inspect wallet balance, token holdings, and recent activity.',
+    role: 'Built a dashboard integrating Helius API data with Supabase-backed persistence.',
+    outcome: 'Wallet activity became easier to scan without manually checking multiple explorers.'
   },
   {
     id: 'web3-3',
@@ -133,7 +170,10 @@ export const projects: Project[] = [
     link: 'https://teclis-nextjs.vercel.app/en',
     category: 'full-stack website',
     technologies: ['Nextjs', 'TailwindCSS', 'TypeScript', 'React', 'Vercel', 'Sanity CMS', 'REST API', 'SEO', 'Multilanguage'],
-    featured: true
+    featured: true,
+    problem: 'A legacy Wix system was difficult to maintain and too limited for international content operations.',
+    role: 'Revamped the platform with Next.js, Sanity CMS, multilingual routing, SEO structure, and maintainable content workflows.',
+    outcome: 'Expanded multilingual support from 3 to 10 languages and made the site easier to scale and maintain.'
   },
   {
     id: 'classic-6',
@@ -233,7 +273,10 @@ export const projects: Project[] = [
     link: 'https://www.uparena.io/',
     category: 'ongoing',
     technologies: ['React', 'Node.js', 'TypeScript', 'Drizzle', 'PostgreSQL', 'Supabase', 'NFTs', 'Web3', ],
-    featured: true
+    featured: true,
+    problem: 'Prediction products need simple onboarding, clear wallet actions, and understandable user feedback.',
+    role: 'Worked on the interface direction for streaming, prediction, wallet, and Web3 transaction flows.',
+    outcome: 'A more Web2-friendly product direction for blockchain-backed prediction mechanics.'
   },
   {
     id: 'classic-10',
@@ -309,7 +352,7 @@ export const projects: Project[] = [
     link: 'https://hairsalon-website.vercel.app/',
     category: 'landing page',
     technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
-    featured: true
+    featured: false
   },
   {
     id: 'classic-18',
@@ -319,7 +362,7 @@ export const projects: Project[] = [
     link: 'https://viced.vercel.app/',
     category: 'landing page',
     technologies: ['React', 'TypeScript', 'TailwindCSS', 'Vercel', 'Nextjs'],
-    featured: true
+    featured: false
   }
 
 

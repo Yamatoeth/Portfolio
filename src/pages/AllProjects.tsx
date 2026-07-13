@@ -4,22 +4,29 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import ProjectCard from '@/components/ProjectCard';
 import ThemeToggle from '@/components/ThemeToggle';
-import { getAllProjects, getProjectsByCategory, Project } from '@/data/projects';
+import { getAllProjects, getFeaturedProjects, getProjectsByCategory, Project } from '@/data/projects';
 
 const AllProjects = () => {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState<'all' | Project['category']>('all');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'featured' | Project['category']>('featured');
   
   const allProjects = getAllProjects();
-  const displayedProjects = selectedCategory === 'all' 
-    ? allProjects 
-    : getProjectsByCategory(selectedCategory);
+  const featuredProjects = getFeaturedProjects();
+  const displayedProjects = selectedCategory === 'all'
+    ? allProjects
+    : selectedCategory === 'featured'
+      ? featuredProjects
+      : getProjectsByCategory(selectedCategory);
 
   const categories = [
     { id: 'all', label: 'All Projects', count: allProjects.length },
-    { id: 'main', label: 'Featured', count: getProjectsByCategory('main').length },
+    { id: 'featured', label: 'Case Studies', count: featuredProjects.length },
+    { id: 'full-stack website', label: 'Full-Stack', count: getProjectsByCategory('full-stack website').length },
+    { id: 'main', label: 'Demos', count: getProjectsByCategory('main').length },
     { id: 'web3', label: 'Web3', count: getProjectsByCategory('web3').length },
-    { id: 'ongoing', label: 'Ongoing', count: getProjectsByCategory('ongoing').length }
+    { id: 'ongoing', label: 'Ongoing', count: getProjectsByCategory('ongoing').length },
+    { id: 'landing page', label: 'Landing Pages', count: getProjectsByCategory('landing page').length },
+    { id: 'shopify', label: 'Shopify', count: getProjectsByCategory('shopify').length }
   ];
 
   return (
@@ -56,8 +63,8 @@ const AllProjects = () => {
               Complete Portfolio
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Explore my complete collection of projects spanning Web3 development, 
-              full-stack applications, and innovative digital solutions.
+              Start with the curated case studies, then browse archived demos, client-style landing pages,
+              Shopify work, and Web3 experiments for a broader view of the range.
             </p>
           </div>
 
@@ -66,7 +73,7 @@ const AllProjects = () => {
             {categories.map((category) => (
               <Button
                 key={category.id}
-                onClick={() => setSelectedCategory(category.id as any)}
+                onClick={() => setSelectedCategory(category.id as typeof selectedCategory)}
                 variant={selectedCategory === category.id ? "default" : "outline"}
                 className={`${
                   selectedCategory === category.id 
@@ -93,7 +100,6 @@ const AllProjects = () => {
               >
                 <ProjectCard 
                   project={project}
-                  onClick={() => window.open(project.link, '_blank')}
                 />
               </div>
             ))}

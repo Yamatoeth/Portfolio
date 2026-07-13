@@ -20,9 +20,9 @@
     --popover-foreground: 0 0% 11%;
 
     /* Brand Colors */
-    --primary: 259 85% 63%;        /* #7F5AF0 - Purple accent */
+    --primary: 176 72% 42%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 259 85% 73%;   /* Lighter version for glows */
+    --primary-glow: 205 92% 62%;
 
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 11%;
@@ -31,7 +31,7 @@
     --muted: 0 0% 94%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 259 85% 63%;
+    --accent: 176 72% 42%;
     --accent-foreground: 0 0% 100%;
 
     /* Interactive States */
@@ -41,7 +41,7 @@
     /* Borders & Inputs */
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 259 85% 63%;
+    --ring: 176 72% 42%;
 
     /* Layout */
     --radius: 0.75rem;
@@ -90,17 +90,17 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 259 85% 70%;
+    --primary: 176 82% 70%;
     --primary-foreground: 0 0% 6%;
-    --primary-glow: 259 85% 80%;
+    --primary-glow: 205 100% 78%;
 
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 259 85% 70%;
+    --accent: 176 82% 70%;
     --accent-foreground: 0 0% 6%;
 
     --destructive: 0 84% 65%;
@@ -108,7 +108,7 @@
 
     --border: 0 0% 16%;
     --input: 0 0% 16%;
-    --ring: 259 85% 70%;
+    --ring: 176 82% 70%;
 
     /* Dark mode gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
