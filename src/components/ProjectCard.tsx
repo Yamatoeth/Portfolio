@@ -35,7 +35,7 @@ const ProjectCard = ({ project, isActive = false }: ProjectCardProps) => {
         ) : (
           <div className="project-placeholder flex h-full w-full flex-col justify-end p-6">
             <span className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Demo Available
+              Project Available
             </span>
             <span className="text-2xl font-display font-semibold text-foreground">
               Visual coming soon

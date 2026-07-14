@@ -38,7 +38,7 @@ export interface Project {
   imagePosition?: string;
   link?: string;
   githubLink?: string;
-  category: 'main' | 'web3' | 'ongoing' | 'classic'| 'shopify'| 'landing page'| 'full-stack website';
+  category: 'main' | 'web3' | 'ongoing' | 'classic'| 'shopify'| 'landing page'| 'full-stack website' | 'systems';
   technologies: string[];
   featured?: boolean;
   problem?: string;
@@ -73,6 +73,18 @@ export const projects: Project[] = [
     problem: 'Speech recordings are hard to review, search, summarize, and reuse without a repeatable analysis pipeline.',
     role: 'Designed an ingestion and analysis workflow that converts audio into structured outputs suitable for automation.',
     outcome: 'Raw recordings become actionable summaries, extracted insights, and machine-readable JSON.'
+  },
+  {
+    id: 'eidolon-engine',
+    title: 'Eidolon Engine',
+    description: 'Real-time 3D agent simulation engine in Rust and Bevy, focused on ECS architecture, utility AI, deterministic systems, and observability.',
+    githubLink: 'https://github.com/Yamatoeth/Eidolon-Engine',
+    category: 'systems',
+    technologies: ['Rust', 'Bevy', 'ECS', 'Utility AI', 'Deterministic Simulation', 'RON', 'Regression Tests'],
+    featured: false,
+    problem: 'Real-time simulations need maintainable system boundaries, deterministic behavior, and tools to inspect why agents make decisions.',
+    role: 'Structured the engine around separated Bevy ECS modules for simulation, AI, scenarios, observability, input, rendering, and fixed-step runtime behavior.',
+    outcome: 'Demo-ready simulation core with foraging agents, scenario presets, inspector/timeline overlays, behavior logging, and regression coverage.'
   },
   
   {

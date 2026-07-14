@@ -22,6 +22,7 @@ const AllProjects = () => {
     { id: 'all', label: 'All Projects', count: allProjects.length },
     { id: 'featured', label: 'Case Studies', count: featuredProjects.length },
     { id: 'full-stack website', label: 'Full-Stack', count: getProjectsByCategory('full-stack website').length },
+    { id: 'systems', label: 'Systems', count: getProjectsByCategory('systems').length },
     { id: 'main', label: 'Demos', count: getProjectsByCategory('main').length },
     { id: 'web3', label: 'Web3', count: getProjectsByCategory('web3').length },
     { id: 'ongoing', label: 'Ongoing', count: getProjectsByCategory('ongoing').length },
