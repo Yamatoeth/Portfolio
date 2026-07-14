@@ -1,46 +1,49 @@
 # Simon Lechevalier Portfolio
 
-Portfolio for a full-stack software engineer focused on React, Next.js, React Native, FastAPI, PostgreSQL, automation workflows, and pragmatic Web3 integrations.
+Personal portfolio for a full-stack software engineer focused on React, Next.js, React Native, FastAPI, PostgreSQL, automation workflows, AI/audio systems, and pragmatic Web3 integrations.
 
-The main page is intentionally curated around the strongest proof points: production delivery, AI/audio workflows, CMS-backed international sites, and Web3 product UX. Additional projects remain available as archive material rather than primary positioning.
+## Purpose
 
+This portfolio is designed as a recruiter-friendly technical showcase. The homepage highlights a curated set of case studies, while the full projects page keeps additional demos, client-style sites, systems projects, Shopify work, and Web3 experiments available for deeper review.
 
-# Stack
+## Highlights
 
-Vite
-React
-TypeScript
-Tailwind CSS
-Three.js
-GSAP
-d3.js
+- Curated case studies for Jarvis, ConvAI, Teclis Scientific, and UpArena
+- Embedded project demos for AI/audio workflows
+- Targeted resume PDFs for different job search angles
+- Dark-first responsive interface
+- WebP-optimized visual assets
+- Project archive with category filters
+- Case-study pages focused on problem, role, stack, and outcome
 
-# Additional Capabilities
+## Tech Stack
 
-Covers tools and domains not always showcased in the primary portfolio but used in practice:
-i18n systems, 
-Shopify integration, 
-Next-intl usage, 
-Supabase workflows, 
-Drizzle ORM, 
-OAuth systems,
-Captcha Integration,
-Form systems,
-REST API integration, 
-database design, 
-SQL usage,
-Authentication flows, 
-State handling, 
-Schema management, 
-Deployment pipelines
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- GSAP
+- D3.js
+- React Router
+- shadcn/ui
 
-# Job Search Assets
+## Project Positioning
 
-The portfolio includes targeted resume PDFs under `public/resumes/`:
+The portfolio separates high-signal case studies from broader archive material. This keeps the first impression focused while still giving reviewers access to the full range of work.
 
-- Full-stack: `simon-lechevalier-full-stack.pdf`
-- Frontend / Next.js: `simon-lechevalier-frontend-nextjs.pdf`
-- API / automation: `simon-lechevalier-api-automation.pdf`
-- Web3 integration: `simon-lechevalier-web3-integration.pdf`
+## Resume Variants
+
+- Full-stack: `public/resumes/simon-lechevalier-full-stack.pdf`
+- Frontend / Next.js: `public/resumes/simon-lechevalier-frontend-nextjs.pdf`
+- API / automation: `public/resumes/simon-lechevalier-api-automation.pdf`
+- Web3 integration: `public/resumes/simon-lechevalier-web3-integration.pdf`
 
 The default `/resume.pdf` mirrors the full-stack version.
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+npm run lint
+npm run build
