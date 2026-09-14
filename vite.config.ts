@@ -10,6 +10,9 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [react()], 
+  build: {
+    target: "es2022",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
